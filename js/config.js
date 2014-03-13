@@ -1,12 +1,8 @@
 
-var baseUrl = '../js',
-	version = (new Date()).getTime();
-
 require.config({
 	waitSeconds : 2000,
-	baseUrl : baseUrl,
+	baseUrl : '../js',
 	paths : {
-		jquery: 'common/jquery-1.10.2.min'
 	},
-	urlArgs : 'version=' + version
+	urlArgs : 'version=' + (new Date()).getTime()
 });

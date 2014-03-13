@@ -1,6 +1,6 @@
 define('common/common', function(require) {
 
-	require('jquery');
+	require('common/jquery');
 
 	var mustache = require('common/mustache'),
 		cookie = require('common/cookie'),
@@ -9,7 +9,7 @@ define('common/common', function(require) {
 	$.cookie = cookie;
 	$.log = log;
 	$.mustache = mustache;
-	$.json = window.JSON || require('common/json2');
+	// $.json = window.JSON || require('common/json2');
 
 
 	$.mix = function() {

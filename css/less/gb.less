@@ -1,0 +1,61 @@
+@import "base.less";
+
+body {
+	.bg(#fff);
+	.m(0);
+	.p(0);
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+#header {
+	.mb(20px);
+	.bg(#222);
+}
+
+
+
+
+
+/*各种组件*/
+.nav {
+	float: left;
+	.m(0);
+	.pl(0);
+
+	li {
+		float: left;
+		position: relative;
+		display: block;
+
+		a {
+			.c(#999);
+			line-height: 20px;
+			position: relative;
+			display: block;
+			padding: 10px 15px;
+		}
+
+		a:hover,a:focus {
+			.c(#fff);
+			.bg(#080808);
+		}
+
+	}
+
+	.active {
+
+		a {
+			.c(#fff);
+			.bg(#080808);
+		}
+
+	}
+
+}

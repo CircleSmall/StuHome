@@ -1,0 +1,52 @@
+.nom {
+  margin: 0;
+}
+.nop {
+  padding: 0;
+}
+.nob {
+  border: 0 none;
+}
+/* config */
+body {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+#header {
+  margin-bottom: 20px;
+  background: #222222;
+}
+/*各种组件*/
+.nav {
+  float: left;
+  margin: 0;
+  padding-left: 0;
+}
+.nav li {
+  float: left;
+  position: relative;
+  display: block;
+}
+.nav li a {
+  color: #999999;
+  line-height: 20px;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+.nav li a:hover,
+.nav li a:focus {
+  color: #ffffff;
+  background: #080808;
+}
+.nav .active a {
+  color: #ffffff;
+  background: #080808;
+}
