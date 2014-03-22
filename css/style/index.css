@@ -1,5 +1,6 @@
 @import url('gb.css');
-@import url('grid.css');
+@import url('search.css');
+/*基本函数*/
 .nom {
   margin: 0;
 }
@@ -10,3 +11,145 @@
   border: 0 none;
 }
 /* config */
+.full_left {
+  /*筛选*/
+  /*列表*/
+}
+.full_left .condition {
+  border: 1px solid #bfbfbf;
+  margin-bottom: 40px;
+}
+.full_left .condition .title {
+  margin: 0;
+  padding: 8px;
+  background: #eeeeee;
+  color: #333333;
+  font-size: 12px;
+}
+.full_left .condition .title span {
+  margin-right: 20px;
+}
+.full_left .condition .condition-body {
+  padding: 9px 30px 15px 30px;
+}
+.full_left .condition .condition-body .row {
+  font-size: 14px;
+  margin: 13px 0;
+  padding-left: 0;
+  color: #1155cc;
+}
+.full_left .condition .condition-body .row .type {
+  color: #333333;
+  font-weight: normal;
+}
+.full_left .condition .condition-body .row li {
+  float: left;
+  margin-right: 33px;
+}
+.full_left .condition .condition-body form.form {
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 0;
+}
+.full_left .condition .condition-body form.form label {
+  color: #333333;
+}
+.full_left .condition .condition-body form.form label.fix {
+  margin-right: 40px;
+}
+.full_left .list .row {
+  border-bottom: 1px solid #bfbfbf;
+  padding-bottom: 20px;
+}
+.full_left .list .row .col {
+  margin-top: 10px;
+}
+.full_left .list .row .img {
+  padding-top: 16px;
+}
+.full_left .list .row .img img {
+  width: 160px;
+  height: 120px;
+}
+.full_left .list .row .introduce {
+  margin: 0 35px;
+  color: #333333;
+}
+.full_left .list .row .introduce h3 {
+  font-size: 20px;
+  color: #22ab39;
+  margin: 17px 0;
+  padding: 0;
+}
+.full_left .list .row .introduce p {
+  margin: 16px 0;
+}
+.full_left .list .row .introduce .qujian {
+  font-weight: bold;
+}
+.full_left .list .row .introduce .address {
+  margin-left: 35px;
+}
+.full_left .list .row .introduce .area {
+  font-weight: bold;
+}
+.full_left .list .row .action {
+  color: #22ab39;
+  font-size: 20px;
+  width: 202px;
+  margin-left: 20px;
+}
+.full_left .list .row .action p {
+  text-align: center;
+  margin: 18px 0;
+}
+.full_left .list .row .action p .price {
+  font-size: 26px;
+  font-weight: bold;
+}
+.full_left .list .row .action p .special {
+  font-size: 26px;
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold;
+  float: right;
+}
+.full_left .list .row .action .btn {
+  font-size: 15px;
+}
+.full_right .recommend {
+  font-size: 12px;
+  width: 236.4px;
+  float: right;
+  border: 1px solid #bfbfbf;
+}
+.full_right .recommend .title {
+  margin: 0;
+  padding: 8px;
+  background: #eeeeee;
+  color: #333333;
+}
+.full_right .recommend .row {
+  margin: 22px 19px;
+}
+.full_right .recommend .row .img {
+  padding-right: 8px;
+}
+.full_right .recommend .row .img img {
+  width: 80px;
+  height: 60px;
+}
+.full_right .recommend .row p {
+  margin-bottom: 7px;
+}
+.full_right .recommend .row .say {
+  color: #333333;
+}
+.full_right .recommend .row .address {
+  color: #22ab39;
+}
+.full_right .recommend .row .price {
+  color: #22ab39;
+  font-weight: bold;
+}

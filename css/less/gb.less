@@ -1,9 +1,13 @@
 @import "base.less";
 
+@import "reset.less";
+
 body {
 	.bg(#fff);
 	.m(0);
 	.p(0);
+	.f(14px);
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 ul {
@@ -16,14 +20,70 @@ a {
 
 #header {
 	.mb(20px);
-	.bg(#222);
+	.bg(#1b1b1b);
+}
+
+.container {
+	.glw(1);
+	margin-right: auto;
+  	margin-left: auto;
+	.p(0);
+	.clear();
+}
+.full_left {
+	.glw(@glw1);
+}
+.full_right {
+	.glw(@glw2);
+}
+//行
+.row {
+	.clear();
+}
+//列
+.col {
+	.fl();
+	.p(0);
+	.m(0);
+}
+
+/*各种组件*/
+
+//按钮
+.btn {
+	.c(#020100);
+	.bg(#22ad38);
+	.b(#a40000);
+	.p(5px 20px);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+//表单
+//input
+.input {
+	display: block;
+	.w(96%);
+	.h(40px);
+	.p(0px 12px);
+	.f(14px);
+	line-height: 1.428571429;
+	.c(@pcolor1);
+	vertical-align: middle;
+	.bg(#f8f8f8 none);
+	.b(@bdcolor2);
+}
+
+.select {
+	.w(140px);
+	.h(25px);
+	.p(4px);
+	.b(@bdcolor1);
+	.c(@pcolor1);
 }
 
 
-
-
-
-/*各种组件*/
+//导航条
 .nav {
 	float: left;
 	.m(0);
@@ -35,7 +95,7 @@ a {
 		display: block;
 
 		a {
-			.c(#999);
+			.c(#dfdfdf);
 			line-height: 20px;
 			position: relative;
 			display: block;
@@ -52,10 +112,11 @@ a {
 	.active {
 
 		a {
-			.c(#fff);
+			.c(#20a336);
 			.bg(#080808);
 		}
 
 	}
 
 }
+

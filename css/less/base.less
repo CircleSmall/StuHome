@@ -1,8 +1,7 @@
 /*基本函数*/
-.w(@param){
-	width:@param;
+.w(@param) {
+	width: @param;
 }
-
 .h(@param){
 	height:@param;
 }
@@ -91,6 +90,58 @@
 	border:0 none;
 }
 
+.fl(){
+	float:left;
+}
+.fr(){
+	float:right;
+}
+
+.clear() {
+  &:before,
+  &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.box_sz(){
+	-moz-box-sizing: border-box;  /*Firefox3.5+*/
+    -webkit-box-sizing: border-box; /*Safari3.2+*/
+    -o-box-sizing: border-box; /*Opera9.6*/
+    -ms-box-sizing: border-box; /*IE8*/
+    box-sizing: border-box; /*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/
+}
 
 
 /* config */
+@imgurl: "../../images/";
+
+//布局宽度
+@unit: px;
+@glw: 1200;//相对于主要内容的宽度
+@glw1: 938/1209;
+@glw2: (1209 - 938 - 5)/1209;
+.glw(@param) {//相对于1200宽度的百分比
+	width: unit(@param * @glw, @unit);
+}
+.glw2(@param) {//相对于左侧宽度的百分比
+	width: unit(@param * @glw * @glw1, @unit);
+}
+
+//border color
+@bdcolor1: #aaa;
+@bdcolor2: #22ad38;
+@bdcolor3: #bfbfbf;
+
+//a color
+@acolor1: #1155cc;//筛选条件
+@acolor2: #22ab39;//列表标题
+
+//文本颜色
+@pcolor1: #333333;
+
+

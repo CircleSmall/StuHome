@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +7,247 @@
   <title>学生之家</title>
 </head>
 <body id="index">
+  <!-- 页头 -->
   <div id="header" class="">
-  	<div class="container">
-  		<ul class="nav">
-  			<li class="active"><a href="">主页</a></li>
-  			<li><a href="">今日推荐</a></li>
-  			<li><a href="">投诉房间</a></li>
-  		</ul>
-  	</div>
+    <div class="container">
+      <ul class="nav">
+        <li class="active">
+          <a href="">主页</a>
+        </li>
+        <li>
+          <a href="">今日推荐</a>
+        </li>
+        <li>
+          <a href="">投诉房间</a>
+        </li>
+      </ul>
+    </div>
   </div>
+  <!-- 页头end -->
+
+  <!-- main -->
+  <div id="main" class="container">
+
+    <!-- search  -->
+    <div class="search row">
+      <div class="logo col">
+        <img src="../images/logo.png" alt="" class="img"></div>
+
+      <form role="form" class="col">
+        <input type="text" class="form-control input" placeholder="请输入城市、学校、房间等关键词"></form>
+      <button class="btn col">搜&nbsp;&nbsp;索</button>
+    </div>
+    <!-- search end -->
+
+    <!-- 主体内容 -->
+    <div class="body row">
+      <!-- full_left -->
+      <div class="full_left col">
+
+        <!-- 筛选条件 -->
+        <div class="condition">
+          <p class="title">
+            筛选条件 &gt; &nbsp;&nbsp;  城市:
+            <span class="city">成都</span>
+            学校:
+            <span class="school">四川大学</span>
+            价格:
+            <span class="price">100-200元</span>
+          </p class="title">
+
+          <!--body 开始-->
+          <div class="condition-body">
+
+            <!-- 筛选表单 -->
+            <form action="" class="row form">
+              <label for="" class="col-md-3_5">
+                城市
+                <select name="city" class="select">
+                  <option value ="chengdu">成都</option>
+                  <option value ="city2">city2</option>
+                </select>
+              </label>
+
+              <label for="" class="col-md-3_5">
+                学校
+                <select name="city" class="select">
+                  <option value ="">四川大学</option>
+                  <option value ="">电子科技大学</option>
+                </select>
+              </label>
+
+              <label class="fix">
+                <input type="checkbox" id="inlineCheckbox1" value="option1">空调</label>
+              <label class="fix">
+                <input type="checkbox" id="inlineCheckbox2" value="option2">独立卫生间</label>
+              <label class="fix">
+                <input type="checkbox" id="inlineCheckbox3" value="option3">热水</label>
+            </form>
+            <!-- 筛选表单 end -->
+
+            <ul class="row">
+              <li>
+                <span class="type">价格:</span>
+              </li>
+              <li>
+                <a href="">不限</a>
+              </li>
+              <li>
+                <a href="">低于50元</a>
+              </li>
+              <li>
+                <a href="">50-100元</a>
+              </li>
+              <li>
+                <a href="">100-200元</a>
+              </li>
+              <li>
+                <a href="">200-300元</a>
+              </li>
+              <li>
+                <a href="">300元以上</a>
+              </li>
+            </ul>
+            <ul class="row">
+              <li>
+                <span class="type">网络:</span>
+              </li>
+              <li>
+                <a href="">不限</a>
+              </li>
+              <li>
+                <a href="">有线网络</a>
+              </li>
+              <li>
+                <a href="">无线网络</a>
+              </li>
+              <li>
+                <a href="">有线及无线网络</a>
+              </li>
+            </ul>
+            <ul class="row">
+              <li>
+                <span class="type">房源类型:</span>
+              </li>
+              <li>
+                <a href="">不限</a>
+              </li>
+              <li>
+                <a href="">低于50元</a>
+              </li>
+              <li>
+                <a href="">50-100元</a>
+              </li>
+              <li>
+                <a href="">100-200元</a>
+              </li>
+              <li>
+                <a href="">200-300元</a>
+              </li>
+              <li>
+                <a href="">300元以上</a>
+              </li>
+            </ul>
+
+          </div>
+          <!--body 结束--> </div>
+        <!-- 筛选条件 end -->
+
+        <!-- 房源列表 -->
+        <div class="list">
+          <!-- 一个房源 -->
+          <div class="row">
+            <div class="col img">
+              <img src="../images/ex.png" alt="" >
+            </div>
+            <div class="col introduce">
+              <h3>四川大学 公寓主卧阳光充足空气好 日租短租</h3>
+              <p><span class="qujian">区间：四川大学</span><span class="address">地址：一环路南二段34号和平小区</span></p>
+              <p><span class="area"> 面积：22平方米 /2室1厅主卧 </span></p>
+              <p><span class="add">卫生间：独立      空调：有      热水：有</span></p>
+            </div>
+            <div class="col action">
+              <p><span class="price">110</span>元/天 <span class="special">&gt;</span></p>
+              <p>索房号: N57483920</p>
+              <p><button class="btn">预定房间</button></p>
+            </div>
+          </div>
+          <!-- 一个房源end -->
+
+          <!-- 一个房源 -->
+          <div class="row">
+            <div class="col img">
+              <img src="../images/ex.png" alt="" >
+            </div>
+            <div class="col introduce">
+              <h3>四川大学 公寓主卧阳光充足空气好 日租短租</h3>
+              <p><span class="qujian">区间：四川大学</span><span class="address">地址：一环路南二段34号和平小区</span></p>
+              <p><span class="area"> 面积：22平方米 /2室1厅主卧 </span></p>
+              <p><span class="add">卫生间：独立      空调：有      热水：有</span></p>
+            </div>
+            <div class="col action">
+              <p><span class="price">110</span>元/天 <span class="special">&gt;</span></p>
+              <p>索房号: N57483920</p>
+              <p><button class="btn">预定房间</button></p>
+            </div>
+          </div>
+          <!-- 一个房源end -->
+
+        </div>
+        <!-- 房源列表 end --> 
+      </div>
+      <!-- full_left end -->
+      
+      <div class="full_right col">
+        <!-- 推荐房源 -->
+        <div class="recommend">
+          <h6 class="title">推荐房源</h6>
+
+          <!-- list -->
+          <div class="list">
+            <!-- 一个推荐房源 -->
+            <div class="row">
+              <div class="col img">
+                <img src="../images/ex2.png" alt="">
+              </div>
+              <div class="col">
+                <p class="say">民房单间 紧邻川大</p>
+                <p class="address">四川大学</p>
+                <p class="price">105元/天</p>
+              </div>
+            </div>
+            <!-- 一个推荐房源end -->
+
+            <!-- 一个推荐房源 -->
+            <div class="row">
+              <div class="col img">
+                <img src="../images/ex2.png" alt="">
+              </div>
+              <div class="col">
+                <p class="say">民房单间 紧邻川大</p>
+                <p class="address">四川大学</p>
+                <p class="price">105元/天</p>
+              </div>
+            </div>
+            <!-- 一个推荐房源end -->
+
+
+          </div>
+          <!-- list end -->
+        </div>
+        <!-- 推荐房源 end -->
+        
+      </div>
+
+      <!-- full_right end -->
+
+    </div>
+    <!-- 主体内容 end --> 
+  </div>
+  <!-- main end  -->
 
   <!-- 脚本 -->
   <script data-main="../js/config" src="../js/require.js"></script>
-  <script type="text/javascript">
-    require(['index/main']);
-  </script>
+  <script type="text/javascript">require(['index/main']);</script>
 </body>
 </html>

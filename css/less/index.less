@@ -1,6 +1,179 @@
 @import "base.less";
 
 @import url('gb.css');
-@import url('grid.css');
+@import url('search.css');
+
+.full_left {
+	/*筛选*/
+	.condition {
+		
+		.b(@bdcolor3);
+		.mb(40px);
+
+		.title {
+			.nom();
+			.p(8px);
+			.bg(#eee);
+			.c(@pcolor1);
+			.f(12px);
+
+			span {
+				.mr(20px);
+			}
+		}
+
+		.condition-body {
+			
+			.p(9px 30px 15px 30px);
+
+			.row {
+				.f(14px);
+				.m(13px 0);
+				.pl(0);
+				.c(@acolor1);
+				.type {
+					.c(@pcolor1);
+					font-weight: normal;
+				}
+
+				li {
+					.fl();
+					.mr(33px);
+				}	
+			}
+
+			form.form {
+				font-weight: bold;
+				.h(40px);
+				line-height: 40px;
+
+				label {
+					.c(@pcolor1);
+				}
+				label.fix {
+					.mr(40px);
+				}
+				.mt(0);
+			}
+		}
+
+		
+	}
+
+
+	/*列表*/
+	.list {
+		.row {
+			.bb(@bdcolor3);
+			.pb(20px);
+
+			.col {
+				.mt(10px);
+			}
+
+			.img {
+				.pt(16px);
+				img {
+					.w(160px);
+					.h(120px);
+				}
+			}
+			.introduce {
+				.m(0 35px);
+				.c(@pcolor1);
+				h3 {
+					.f(20px);
+					.c(@acolor2);
+					.m(17px 0);
+					.p(0);
+				}
+				p{
+					.m(16px 0);
+				}
+				.qujian {
+					font-weight: bold;
+				}
+				.address {
+					.ml(35px);
+				}
+				.area {
+					font-weight: bold;
+				}
+			}
+
+			.action {
+				.c(@acolor2);
+				.f(20px);
+				.w(202px);
+				.ml(20px);
+				p {
+					text-align: center;
+					.m(18px 0);
+
+					.price {
+						.f(26px);
+						font-weight: bold;
+					}
+
+					.special {
+						.f(26px);
+						.h(30px);
+						line-height: 30px;
+						font-weight: bold;
+
+						float: right;
+					}
+				}
+				.btn {
+					.f(15px);
+				}
+			}
+			
+		}
+	}
+}
+
+.full_right {
+	.recommend {
+		.f(12px);
+		.glw(0.197);
+		.fr();
+		.b(@bdcolor3);
+		.title {
+			.nom();
+			.p(8px);
+			.bg(#eee);
+			.c(@pcolor1);
+			
+		}
+		.row {
+			.img {
+				.pr(8px);
+				img {
+					.w(80px);
+					.h(60px);
+				}
+			}
+			.m(22px 19px);
+
+			p {
+				.mb(7px);
+			}
+			.say {
+				.c(@pcolor1);
+			}
+			.address {
+				.c(@acolor2);
+			}
+			.price {
+				.c(@acolor2);
+				font-weight: bold;
+			}
+		}
+	}
+	
+}
+
+
 
 
