@@ -155,44 +155,26 @@
 
         <!-- 房源列表 -->
         <div class="list">
-          <!-- 一个房源 -->
-          <div class="row">
-            <div class="col img">
-              <img src="../images/ex.png" alt="" >
-            </div>
-            <div class="col introduce">
-              <h3>四川大学 公寓主卧阳光充足空气好 日租短租</h3>
-              <p><span class="qujian">区间：四川大学</span><span class="address">地址：一环路南二段34号和平小区</span></p>
-              <p><span class="area"> 面积：22平方米 /2室1厅主卧 </span></p>
-              <p><span class="add">卫生间：独立      空调：有      热水：有</span></p>
-            </div>
-            <div class="col action">
-              <p><span class="price">110</span>元/天 <span class="special">&gt;</span></p>
-              <p>索房号: N57483920</p>
-              <p><button class="btn">预定房间</button></p>
-            </div>
-          </div>
-          <!-- 一个房源end -->
-
-          <!-- 一个房源 -->
-          <div class="row">
-            <div class="col img">
-              <img src="../images/ex.png" alt="" >
-            </div>
-            <div class="col introduce">
-              <h3>四川大学 公寓主卧阳光充足空气好 日租短租</h3>
-              <p><span class="qujian">区间：四川大学</span><span class="address">地址：一环路南二段34号和平小区</span></p>
-              <p><span class="area"> 面积：22平方米 /2室1厅主卧 </span></p>
-              <p><span class="add">卫生间：独立      空调：有      热水：有</span></p>
-            </div>
-            <div class="col action">
-              <p><span class="price">110</span>元/天 <span class="special">&gt;</span></p>
-              <p>索房号: N57483920</p>
-              <p><button class="btn">预定房间</button></p>
-            </div>
-          </div>
-          <!-- 一个房源end -->
-
+          <textarea class="J_template J_template_main" data-continue = "true">
+            {{#list}}
+              <div class="row">
+                <div class="col img">
+                  <img src="{{theme_pic}}" alt="" >
+                </div>
+                <div class="col introduce">
+                  <h3>{{abstract}}</h3>
+                  <p><span class="qujian">区间：{{school_id}}</span><span class="address">地址：{{address}}</span></p>
+                  <p><span class="area"> 面积：{{square}}平方米 / {{size_des}} </span></p>
+                  <p><span class="add">卫生间：{{wc_condition_id}}      空调：{{ac_id}}      热水：{{hot_water_id}}</span></p>
+                </div>
+                <div class="col action">
+                  <p><span class="price">{{price}}</span>元/天 <span class="special">&gt;</span></p>
+                  <p>索房号: {{room_id}}</p>
+                  <p><button class="btn">预定房间</button></p>
+                </div>
+              </div>
+            {{/list}}
+          </textarea>
         </div>
         <!-- 房源列表 end --> 
       </div>

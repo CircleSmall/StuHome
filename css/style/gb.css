@@ -183,6 +183,9 @@ a {
 .full_right {
   width: 264.01985112px;
 }
+.J_template {
+  display: none;
+}
 .row:before,
 .row:after {
   content: " ";
@@ -222,7 +225,7 @@ a {
 .select {
   width: 140px;
   height: 25px;
-  padding: 4px;
+  padding: 2px;
   border: 1px solid #aaaaaa;
   color: #333333;
 }

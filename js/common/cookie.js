@@ -1,7 +1,7 @@
 /**
  * cookies
  */
-define('cookie', function() {
+define('common/cookie', function() {
 	return {
 		get : function(name) {
 			var r = new RegExp("(^|;|\\s+)" + name + "=([^;]*)(;|$)");
