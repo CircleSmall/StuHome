@@ -18,7 +18,8 @@ define('server/server', function() {
 				wc_condition_id : "?",
 				hot_water_id : "?",
 				price : "?"
-			}
+			},
+			type: "search"
 		},
 
 		//搜索框
@@ -27,7 +28,8 @@ define('server/server', function() {
 			url: baseUrl + 'searchCondition.tpl',
 			post : {
 				summary_des : "?"
-			}
+			},
+			type: "search"
 		}
 	}
 

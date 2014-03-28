@@ -19,13 +19,16 @@ define('common/common',
 			var url = obj.url;
 			var para = obj.get || obj.post;
 			var paraObj = $.J_url.urlMerge(para, data);
-			// console.log(para,data,paraObj)
+
+			//传送的字符串
+			var sendStr = obj.type + "=" + JSON.stringify(paraObj);
+
 			if (obj.get) {
-				$.get(url, paraObj, function(returnData) {
+				$.get(url, sendStr, function(returnData) {
 					callback && callback(returnData);
 				});
 			} else if (obj.post) {
-				$.post(url, paraObj, function(returnData) {
+				$.post(url, sendStr, function(returnData) {
 					callback && callback(returnData);
 				});
 			} else {
