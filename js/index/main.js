@@ -1,7 +1,14 @@
 require(['common/common', 'index/index'], function($, index) {
 
+	if(!preLoadData){
+		console.log("pre load 参数错误")
+	}
+
 	//判断是否继续加载还是重新加载(默认重新加载)
 	isContinued = false;
+
+	//判断当前状态是搜索框接口还是搜索条件接口(search和condition)
+	var searchStatus = "";
 
 	var selectDiv = $('#J_select'); //筛选条件内容
 	var conTitle = $('#J_condition_title'); //筛选条件标题
@@ -9,14 +16,15 @@ require(['common/common', 'index/index'], function($, index) {
 
 	//搜索条件接口模拟的数据
 	var conditionData = {
-		city_id: parseInt($('#J_city', selectDiv).children('option:selected')[0].value),
-		school_id: parseInt($('#J_school', selectDiv).children('option:selected')[0].value),
+		city_id: preLoadData.city.value,
+		school_id: preLoadData.school.value,
 		network_condition_id: 0,
 		owner_type_id: 0,
 		ac_id: 0,
 		wc_condition_id: 0,
 		hot_water_id: 0,
-		price: ""
+		price: $.J_json.stringify({min:0,max:1000000}),//price默认是无限
+		page_index: 0
 	};
 
 	//改变城市、学校选择框的值
@@ -42,7 +50,7 @@ require(['common/common', 'index/index'], function($, index) {
 		var me = $(this);
 		var type = $(me).attr('data-type');
 		var value = $(me.children('input'))[0].checked ? 1 : 0;
-		if(type == "ac") {
+		if (type == "ac") {
 			conditionData.ac_id = value;
 		} else if (type == "wc") {
 			conditionData.wc_condition_id = value;
@@ -61,8 +69,8 @@ require(['common/common', 'index/index'], function($, index) {
 		if (type == "price") {
 
 			conditionData.price = $.J_json.stringify({
-				min: $(this).attr("data-min"),
-				max: $(this).attr("data-max")
+				min: parseInt($(this).attr("data-min")),
+				max: parseInt($(this).attr("data-max"))
 			});
 			$('.price', conTitle).text($(this).text());
 
@@ -84,10 +92,24 @@ require(['common/common', 'index/index'], function($, index) {
 	});
 
 	//点击搜索框
-	$('#J_search_btn').click(function(){
+	$('#J_search_btn').click(function() {
 		var str = $('#J_search_input')[0].value;
 		showSearch(checkSearch(str));
 	});
+
+	//点击加载更多
+	$('#J_load').click(function() {
+
+		conditionData.page_index++;
+
+		isContinued = true;
+
+		if (searchStatus == "search") {
+			showSearch();
+		} else if (searchStatus == "condition") {
+			showCondition();
+		}
+	})
 
 	//检查搜索输入字段（目前还未检查）
 	function checkSearch(str) {
@@ -96,18 +118,21 @@ require(['common/common', 'index/index'], function($, index) {
 
 	//显示搜索条件接口的数据
 	function showCondition() {
+		searchStatus = "condition";
+		reLoad();
 		index.searchCondition(conditionData, fillData);
 	};
 
 	//显示搜索框接口的数据
 	function showSearch(str) {
+		searchStatus = "search";
+		reLoad();
 		index.search({
 			summary_des: str
 		}, fillData);
 	};
 
 	function fillData(data) {
-		reLoad();
 		$.J_apply($('.J_template_main'), {
 			list: data
 		});
@@ -117,7 +142,16 @@ require(['common/common', 'index/index'], function($, index) {
 	function reLoad() {
 		if (!isContinued) {
 			$('.J_datalist').remove();
+			conditionData.page_index = 0; //重设page_index
 		}
 	}
+
+
+	//默认操作
+	var city = $('span.city',conTitle);
+	city.text(preLoadData.city.content);
+	var school = $('span.school',conTitle);
+	school.text(preLoadData.school.content);
+	showCondition();
 
 })

@@ -48,11 +48,11 @@
         <div class="condition">
           <p class="title" id="J_condition_title">
             筛选条件 &gt; &nbsp;&nbsp;  城市:
-            <span class="city">成都</span>
+            <span class="city"></span>
             学校:
-            <span class="school">四川大学</span>
+            <span class="school"></span>
             价格:
-            <span class="price">100-200元</span>
+            <span class="price">不限</span>
           </p class="title">
 
           <!--body 开始-->
@@ -90,10 +90,10 @@
                 <span class="type">价格:</span>
               </li>
               <li>
-                <a href="javascript:;" data-max="" data-min="" class="active">不限</a>
+                <a href="javascript:;" data-max="100000" data-min="0" class="active">不限</a>
               </li>
               <li>
-                <a href="javascript:;" data-max="50" data-min="">低于50元</a>
+                <a href="javascript:;" data-max="50" data-min="0">低于50元</a>
               </li>
               <li>
                 <a href="javascript:;" data-max="100" data-min="50">50-100元</a>
@@ -105,7 +105,7 @@
                 <a href="javascript:;" data-max="300" data-min="200">200-300元</a>
               </li>
               <li>
-                <a href="javascript:;" data-max="" data-min="300">300元以上</a>
+                <a href="javascript:;" data-max="100000" data-min="300">300元以上</a>
               </li>
             </ul>
             <ul class="row J_line" data-type="network">
@@ -113,7 +113,7 @@
                 <span class="type">网络:</span>
               </li>
               <li>
-                <a href="javascript:;" class="active" data-type="">不限</a>
+                <a href="javascript:;" class="active" data-type="0">不限</a>
               </li>
               <li>
                 <a href="javascript:;" data-type="1">有线网络</a>
@@ -165,6 +165,12 @@
           </textarea>
         </div>
         <!-- 房源列表 end --> 
+
+        <!-- 点击加载更多 -->
+        <div class="load">
+          <a href="javascript:;" id="J_load">点击加载更多</a>
+        </div>
+        <!-- 点击加载更多end -->
       </div>
       <!-- full_left end -->
       
@@ -217,6 +223,19 @@
   <!-- main end  -->
 
   <!-- 脚本 -->
+  <script type="text/javascript">
+  //页面初始化数据
+  var preLoadData = {
+    city : {
+      value : 1,
+      content : "四川"
+    },
+    school : {
+      value : 1,
+      content : "四川大学"
+    }
+  }
+  </script>
   <script data-main="../js/config" src="../js/require.js"></script>
   <script type="text/javascript">require(['index/main']);</script>
 </body>

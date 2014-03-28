@@ -17,7 +17,8 @@ define('server/server', function() {
 				ac_id: "?",
 				wc_condition_id: "?",
 				hot_water_id: "?",
-				price: "?"
+				price: "?",
+				page_index:"?"
 			},
 			type: "search"
 		},
@@ -27,7 +28,8 @@ define('server/server', function() {
 			// url: baseUrl + 'RoomSearchServlet',
 			url: baseUrl + 'searchCondition.tpl',
 			post: {
-				summary_des: "?"
+				summary_des: "?",
+				page_index:"?"
 			},
 			type: "search"
 		}

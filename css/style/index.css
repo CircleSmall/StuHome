@@ -14,6 +14,7 @@
 .full_left {
   /*筛选*/
   /*列表*/
+  /*列表end*/
 }
 .full_left .condition {
   border: 1px solid #bfbfbf;
@@ -123,6 +124,13 @@
 }
 .full_left .list .row .action .btn {
   font-size: 15px;
+}
+.full_left .load a {
+  color: #6d6d6d;
+  display: block;
+  padding-left: 30px;
+  background: url("../../images/load.png") no-repeat top left;
+  margin-top: 24px;
 }
 .full_right .recommend {
   font-size: 12px;

@@ -13,7 +13,8 @@ define('index/index', ['common/common', 'server/server'],function($,server){
 		wc_condition_id : "",
 		hot_water_id : "",
 		price : "",
-		summary_des : ""
+		summary_des : "",
+		page_index : ""
 	}
 
 	//搜索条件
@@ -27,6 +28,7 @@ define('index/index', ['common/common', 'server/server'],function($,server){
 		bizObj.wc_condition_id = data.wc_condition_id;
 		bizObj.hot_water_id = data.hot_water_id;
 		bizObj.price = data.price;
+		bizObj.page_index = data.page_index;
 
 		$.J_xhr(server.searchCondition, bizObj, function(data){
 			//回调函数
