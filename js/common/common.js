@@ -1,10 +1,16 @@
-define('common/common', ['common/jquery', 'common/mustache', 'common/cookie', 'common/log', 'common/json2'], //
+define('common/common',
 
-	function(undefined, mustache, cookie, log, undefined) {
+	function(require) {
 
-		$.J_cookie = cookie,
-		$.J_log = log;
+		require('common/jquery');
+		require('common/json2');
+
+		$.J_cookie = require('common/cookie');
+		$.J_log = require('common/log');
 		$.J_json = JSON;
+		$.J_mustache = require('common/mustache');
+		$.J_url = require('common/url');
+
 
 		$.J_xhr = function(obj, data, callback) {
 			if (!obj.url) {
@@ -12,15 +18,15 @@ define('common/common', ['common/jquery', 'common/mustache', 'common/cookie', 'c
 			}
 			var url = obj.url;
 			var para = obj.get || obj.post;
-			var paraObj = $.merge(para, data);
-
+			var paraObj = $.J_url.urlMerge(para, data);
+			// console.log(para,data,paraObj)
 			if (obj.get) {
 				$.get(url, paraObj, function(returnData) {
-					callback && callback($.parseJSON(returnData));
+					callback && callback(returnData);
 				});
 			} else if (obj.post) {
 				$.post(url, paraObj, function(returnData) {
-					callback && callback($.J_json.parse(returnData));
+					callback && callback(returnData);
 				});
 			} else {
 				console.log("请指定一个get 或 post 方法");
@@ -29,7 +35,6 @@ define('common/common', ['common/jquery', 'common/mustache', 'common/cookie', 'c
 
 		// 参数el: dom节点, data 要渲染的对象, callback渲染后的回调
 		$.J_apply = function(el, data, callback) {
-
 			if (typeof el != 'string' && el.length && !el.nodeName) {
 				// 如果el是jquery对象
 				for (var i = 0; i < el.length; i++) {
@@ -38,7 +43,7 @@ define('common/common', ['common/jquery', 'common/mustache', 'common/cookie', 'c
 
 			} else {
 				//如果el是dom节点
-				var str = mustache.render(el.value, data);
+				var str = $.J_mustache.render(el.value, data);
 				var attr = el.getAttribute('data-continue');
 				if (attr && attr == "true") {
 					$(el).before(str);
@@ -65,7 +70,7 @@ define('common/common', ['common/jquery', 'common/mustache', 'common/cookie', 'c
 		}
 
 		/**
-		 * 把参数2,3...的所有不为undefined的key复制到参数1值为"？"key上
+		 * 把参数2,3...的所有不为undefined的key复制到参数1上
 		 */
 		$.J_merge = function() {
 			if (arguments.length > 0) {
@@ -88,6 +93,19 @@ define('common/common', ['common/jquery', 'common/mustache', 'common/cookie', 'c
 		 */
 		$.J_isNull = function(o) {
 			return o == undefined || o == null || o == '';
+		}
+
+		/**
+		 * 节点替换成指定HTML
+		 */
+		$.J_replaceHTML = function(element, html) {
+			var div = document.createElement('div');
+			div.innerHTML = html;
+			for (var i = 0, a = div.childNodes; i < a.length;) {
+				element.parentNode.insertBefore(a[0], element);
+			}
+			div = null;
+			element.parentNode.removeChild(element);
 		}
 
 		return $;

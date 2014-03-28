@@ -10,6 +10,7 @@ define('server/server', function() {
 			// url: baseUrl + 'RoomSearchServlet',
 			url: baseUrl + 'searchCondition.tpl',
 			post: {
+				city_id : "?",
 				school_id : "?",
 				network_condition_id : "?",
 				owner_type_id : "?",
@@ -23,7 +24,7 @@ define('server/server', function() {
 		//搜索框
 		search: {
 			// url: baseUrl + 'RoomSearchServlet',
-			url: baseUrl + 'search.tpl',
+			url: baseUrl + 'searchCondition.tpl',
 			post : {
 				summary_des : "?"
 			}

@@ -31,6 +31,9 @@
 				.m(13px 0);
 				.pl(0);
 				.c(@acolor1);
+				.active {
+					.c(@acolor_hover);
+				}
 				.type {
 					.c(@pcolor1);
 					font-weight: normal;
@@ -40,6 +43,10 @@
 					.fl();
 					.mr(33px);
 				}	
+			}
+
+			.row li a:hover {
+				.c(@acolor_hover);
 			}
 
 			form.form {

@@ -38,6 +38,9 @@
   padding-left: 0;
   color: #1155cc;
 }
+.full_left .condition .condition-body .row .active {
+  color: #666666;
+}
 .full_left .condition .condition-body .row .type {
   color: #333333;
   font-weight: normal;
@@ -45,6 +48,9 @@
 .full_left .condition .condition-body .row li {
   float: left;
   margin-right: 33px;
+}
+.full_left .condition .condition-body .row li a:hover {
+  color: #666666;
 }
 .full_left .condition .condition-body form.form {
   font-weight: bold;

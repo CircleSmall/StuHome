@@ -34,8 +34,8 @@
         <img src="../images/logo.png" alt="" class="img"></div>
 
       <form role="form" class="col">
-        <input type="text" class="form-control input" placeholder="请输入城市、学校、房间等关键词"></form>
-      <button class="btn col">搜&nbsp;&nbsp;索</button>
+        <input type="text" class="form-control input" placeholder="请输入城市、学校、房间等关键词" id="J_search_input"></form>
+      <button class="btn col" id="J_search_btn">搜&nbsp;&nbsp;索</button>
     </div>
     <!-- search end -->
 
@@ -46,7 +46,7 @@
 
         <!-- 筛选条件 -->
         <div class="condition">
-          <p class="title">
+          <p class="title" id="J_condition_title">
             筛选条件 &gt; &nbsp;&nbsp;  城市:
             <span class="city">成都</span>
             学校:
@@ -56,96 +56,84 @@
           </p class="title">
 
           <!--body 开始-->
-          <div class="condition-body">
+          <div class="condition-body" id="J_select">
 
             <!-- 筛选表单 -->
             <form action="" class="row form">
               <label for="" class="col-md-3_5">
                 城市
-                <select name="city" class="select">
-                  <option value ="chengdu">成都</option>
-                  <option value ="city2">city2</option>
+                <select name="city" id="J_city" class="select">
+                  <option value ="1">成都</option>
+                  <option value ="2">city2</option>
                 </select>
               </label>
 
               <label for="" class="col-md-3_5">
                 学校
-                <select name="city" class="select">
-                  <option value ="">四川大学</option>
-                  <option value ="">电子科技大学</option>
+                <select name="school" id="J_school" class="select">
+                  <option value ="1">四川大学</option>
+                  <option value ="2">电子科技大学</option>
                 </select>
               </label>
 
-              <label class="fix">
-                <input type="checkbox" id="inlineCheckbox1" value="option1">空调</label>
-              <label class="fix">
-                <input type="checkbox" id="inlineCheckbox2" value="option2">独立卫生间</label>
-              <label class="fix">
-                <input type="checkbox" id="inlineCheckbox3" value="option3">热水</label>
+              <label class="fix" data-type="ac" value="1">
+                <input type="checkbox" >空调</label>
+              <label class="fix" data-type="wc" value="1">
+                <input type="checkbox" >独立卫生间</label>
+              <label class="fix" data-type="hot" value="1">
+                <input type="checkbox" >热水</label>
             </form>
             <!-- 筛选表单 end -->
 
-            <ul class="row">
+            <ul class="row J_line" data-type="price">
               <li>
                 <span class="type">价格:</span>
               </li>
               <li>
-                <a href="">不限</a>
+                <a href="javascript:;" data-max="" data-min="" class="active">不限</a>
               </li>
               <li>
-                <a href="">低于50元</a>
+                <a href="javascript:;" data-max="50" data-min="">低于50元</a>
               </li>
               <li>
-                <a href="">50-100元</a>
+                <a href="javascript:;" data-max="100" data-min="50">50-100元</a>
               </li>
               <li>
-                <a href="">100-200元</a>
+                <a href="javascript:;" data-max="200" data-min="100">100-200元</a>
               </li>
               <li>
-                <a href="">200-300元</a>
+                <a href="javascript:;" data-max="300" data-min="200">200-300元</a>
               </li>
               <li>
-                <a href="">300元以上</a>
+                <a href="javascript:;" data-max="" data-min="300">300元以上</a>
               </li>
             </ul>
-            <ul class="row">
+            <ul class="row J_line" data-type="network">
               <li>
                 <span class="type">网络:</span>
               </li>
               <li>
-                <a href="">不限</a>
+                <a href="javascript:;" class="active" data-type="">不限</a>
               </li>
               <li>
-                <a href="">有线网络</a>
+                <a href="javascript:;" data-type="1">有线网络</a>
               </li>
               <li>
-                <a href="">无线网络</a>
+                <a href="javascript:;" data-type="2">无线网络</a>
               </li>
               <li>
-                <a href="">有线及无线网络</a>
+                <a href="javascript:;" data-type="3">有线及无线网络</a>
               </li>
             </ul>
-            <ul class="row">
+            <ul class="row J_line" data-type="owner_type">
               <li>
                 <span class="type">房源类型:</span>
               </li>
               <li>
-                <a href="">不限</a>
+                <a href="javascript:;" data-type="1">个人租赁</a>
               </li>
               <li>
-                <a href="">低于50元</a>
-              </li>
-              <li>
-                <a href="">50-100元</a>
-              </li>
-              <li>
-                <a href="">100-200元</a>
-              </li>
-              <li>
-                <a href="">200-300元</a>
-              </li>
-              <li>
-                <a href="">300元以上</a>
+                <a href="javascript:;" data-type="2">经纪人租赁</a>
               </li>
             </ul>
 
@@ -154,10 +142,10 @@
         <!-- 筛选条件 end -->
 
         <!-- 房源列表 -->
-        <div class="list">
+        <div class="list" id="left_list">
           <textarea class="J_template J_template_main" data-continue = "true">
             {{#list}}
-              <div class="row">
+              <div class="row J_datalist">
                 <div class="col img">
                   <img src="{{theme_pic}}" alt="" >
                 </div>
