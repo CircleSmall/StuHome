@@ -9,10 +9,10 @@ require(['common/common', 'index/index'], function($, index) {
 
 	//搜索条件接口模拟的数据
 	var conditionData = {
-		city_id: $('#J_city', selectDiv).children('option:selected')[0].value,
-		school_id: $('#J_school', selectDiv).children('option:selected')[0].value,
-		network_condition_id: "",
-		owner_type_id: "",
+		city_id: parseInt($('#J_city', selectDiv).children('option:selected')[0].value),
+		school_id: parseInt($('#J_school', selectDiv).children('option:selected')[0].value),
+		network_condition_id: 0,
+		owner_type_id: 0,
 		ac_id: 0,
 		wc_condition_id: 0,
 		hot_water_id: 0,
@@ -22,9 +22,8 @@ require(['common/common', 'index/index'], function($, index) {
 	//改变城市、学校选择框的值
 	$('select', selectDiv).change(function() {
 		var el = $(this).children('option:selected');
-		var value = el[0].value;
+		var value = parseInt(el[0].value);
 		conditionData.school_id = value;
-		
 
 		if ($(this).attr('id') == "J_city") {
 			$('.city', conTitle).text(el.text());
@@ -69,11 +68,11 @@ require(['common/common', 'index/index'], function($, index) {
 
 		} else if (type == "network") {
 
-			conditionData.network_condition_id = $(this).attr('data-type');
+			conditionData.network_condition_id = parseInt($(this).attr('data-type'));
 
 		} else if (type == "owner_type") {
 
-			conditionData.owner_type_id = $(this).attr('data-type');
+			conditionData.owner_type_id = parseInt($(this).attr('data-type'));
 
 		}
 		$(this).parents('.J_line').find('a').removeClass('active');
