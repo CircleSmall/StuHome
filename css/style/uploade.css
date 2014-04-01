@@ -1,0 +1,141 @@
+@import url('gb.css');
+/*基本函数*/
+.nom {
+  margin: 0;
+}
+.nop {
+  padding: 0;
+}
+.nob {
+  border: 0 none;
+}
+/* config */
+#main .title span.col {
+  font-size: 21px;
+  height: 41px;
+  line-height: 41px;
+  color: #2ea436;
+  font-weight: bold;
+  border-left: 4px solid #2ea436;
+  margin-left: 16px;
+  padding-left: 9px;
+}
+#main .uploade-nav {
+  margin: 35px 0;
+  width: 441.6px;
+  height: 41.33333px;
+  background: url("../../images/uploade/uploade-nav.png") no-repeat 0 0;
+}
+#main form {
+  padding: 5px;
+  font-size: 15px;
+}
+#main form .row {
+  margin: 14.5px 14.5px 0 0;
+}
+#main form .row .label {
+  width: 86.89655172px;
+  height: 30px;
+  line-height: 30px;
+  text-align: left;
+  color: #4d4f4e;
+  font-family: bold;
+}
+#main form .row input,
+#main form .row select,
+#main form .row textarea {
+  height: 30px;
+  line-height: 30px;
+  width: 565.86206897px;
+  border: 1px solid #b3b3b3;
+  padding: 0 20px;
+}
+#main form .row .contact-person {
+  width: 128.27586207px;
+}
+#main form .row .contact-phone {
+  width: 160.34482759px;
+}
+#main form .row .school {
+  width: 160.34482759px;
+}
+#main form .row .room-intro {
+  height: 100px;
+  margin-bottom: 30px;
+}
+#main form .row .price,
+#main form .row .area {
+  width: 136.55172414px;
+}
+#main form .row .hot-water,
+#main form .row .network {
+  height: 30px;
+  line-height: 30px;
+}
+#main form .row .hot-water input,
+#main form .row .network input {
+  height: 15px;
+  line-height: 15px;
+  width: 43.44827586px;
+}
+#main form .row .add {
+  padding-left: 13px;
+}
+#main form .row .add span {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  color: #898989;
+}
+#main form .row .add span.xing {
+  color: #e40011;
+  font-weight: bold;
+  padding-top: 3px;
+  padding-right: 5px;
+}
+#main form .line {
+  border-bottom: 1px dotted #b3b3b3;
+  padding: 16px 0;
+  margin-bottom: 25px;
+}
+#main form .form-btn {
+  padding: 9px;
+  border: 1px solid #000000;
+  font-size: 18px;
+  color: #ffffff;
+  margin: 48px 0;
+  background: #f39801;
+  font-family: bold;
+}
+#main .help h3 {
+  background: url("../../images/uploade/uploade-help-title.png") no-repeat top left;
+  height: 55px;
+  line-height: 55px;
+  font-size: 18px;
+  color: #828282;
+  font-weight: bold;
+  padding-left: 9px;
+}
+#main .help h3 .tip {
+  font-size: 14px;
+  font-weight: normal;
+}
+#main .help ul {
+  margin-left: 7px;
+  background: url("../../images/uploade/uploade-help-body.png") repeat-y top left;
+  width: 100%;
+  padding-top: 10px;
+}
+#main .help ul li {
+  position: relative;
+  font-size: 13px;
+  line-height: 24px;
+  padding-left: 35px;
+  width: 207px;
+  color: #090504;
+  margin-bottom: 15px;
+}
+#main .help ul li .num {
+  position: absolute;
+  left: 11px;
+}

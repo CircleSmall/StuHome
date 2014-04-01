@@ -115,6 +115,19 @@
     -ms-box-sizing: border-box; /*IE8*/
     box-sizing: border-box; /*W3C标准(IE9+，Safari5.1+,Chrome10.0+,Opera10.6+都符合box-sizing的w3c标准语法)*/
 }
+.rounded(@radius: 3px) {
+	-webkit-border-radius:@radius;
+	-moz-border-radius:@radius;
+	border-radius:@radius;
+	-webkit-background-clip:padding-box;
+	-moz-background-clip:padding-box;
+	background-clip:padding-box;
+}
+.box-shadow(@arguments) {
+	-webkit-box-shadow:@arguments;
+	-moz-box-shadow:@arguments;
+	box-shadow:@arguments;
+}
 
 
 /* config */
@@ -149,5 +162,3 @@
 
 //url
 @imgUrl: '../../images/';
-
-

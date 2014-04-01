@@ -201,6 +201,14 @@ a {
   padding: 0;
   margin: 0;
 }
+.logo {
+  width: 201.09975186px;
+  padding-left: 0;
+}
+.logo .img {
+  width: 199px;
+  height: 41px;
+}
 /*各种组件*/
 .btn {
   color: #020100;

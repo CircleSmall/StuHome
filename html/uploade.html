@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style/uploade.css">
+  <title>学生之家</title>
+</head>
+<body id="index">
+  <!-- 页头 -->
+  <div id="header" class="">
+    <div class="container">
+      <ul class="nav">
+        <li class="">
+          <a href="">主页</a>
+        </li>
+        <li>
+          <a href="">评价房间</a>
+        </li>
+        <li class="active">
+          <a href="">上传房间</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 页头end -->
+
+  <!-- main -->
+  <div id="main" class="container">
+  
+    <!-- title  -->
+    <div class="title row">
+      <div class="logo col">
+        <img src="../images/logo.png" alt="" class="img">
+      </div>
+      <span class="col">上传房间</span>
+    </div>
+    <!-- title end -->
+
+    <!-- 主体内容 -->
+    <div class="body row">
+      <!-- full_left -->
+      <div class="full_left col">
+        <div class="uploade-nav">
+          
+        </div>
+        <!-- 第一步  -->
+        <div id="first_step">
+          <form action="">
+
+            <div class="row">
+              <label for="title" class="col label" id="">房源标题 : </label>
+              <input type="text" class="col" name="title">
+              <p class="add col"> <span class="xing">*</span> <span>标题限20字</span></p>
+            </div>
+
+            <div class="row">
+              <label for="" class="col label">联&nbsp;系&nbsp;人 : </label>
+              <input type="text" class="col contact-person">
+              <p class="add col"> <span class="xing">*</span> <span></span></p>
+            </div>
+
+            <div class="row">
+              <label for="" class="col label">联系电话 : </label>
+              <input type="text" class="col contact-phone">
+              <p class="add col"> <span class="xing">*</span> <span></span></p>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="row">
+              <label for="" class="col label">邻近学校 : </label>
+              <select name="" id="" class="col school">
+                  <option value ="1">四川大学</option>
+                  <option value ="2">电子科技大学</option>
+              </select>
+              <p class="add col"> <span class="xing">*</span> <span></span></p>
+            </div>
+
+            <div class="row">
+              <label for="" class="col label">详细地址 : </label>
+              <input type="text" class="col">
+              <p class="add col"> <span class="xing">*</span> <span>地址限30字</span></p>
+            </div>
+
+            <div class="row">
+              <label for="" class="col label">房间介绍 : </label>
+              <textarea name="" id="" class="col room-intro">
+              </textarea>
+              <p class="add col"> <span class="xing">*</span> <span>说明限140字</span></p>
+            </div>
+
+            <div class="row">
+              <label for="" class="col label">价&nbsp;&nbsp;&nbsp;&nbsp;格 : </label>
+              <input type="text" class="col price">
+              <p class="add col"> <span class="xing">*</span> <span></span></p>
+            </div>
+            
+            <div class="row">
+              <label for="" class="col label">面&nbsp;&nbsp;&nbsp;&nbsp;积 : </label>
+              <input type="text" class="col area">
+              <p class="add col"> <span class="xing">*</span> <span></span></p>
+            </div>
+
+            <div class="row">
+              <label for="inputEmail3" class="col label">热&nbsp;&nbsp;&nbsp;&nbsp;水 : </label>
+              <div class="hot-water col">
+                <label class="col"><input type="checkbox" >有</label>
+                <label class="col"><input type="checkbox" >无</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div for="inputEmail3" class="col label">网&nbsp;&nbsp;&nbsp;&nbsp;络 : </div>
+              <div class="network col">
+                <label class="col"><input type="checkbox" >有</label>
+                <label class="col"><input type="checkbox" >无</label>
+              </div>
+            </div>
+
+            <button class="form-btn">保存,下一步</button>
+          </form>
+        </div>
+        <!-- 第一步 end -->
+        <!-- 第二步 -->
+        <div id="first_second"></div>
+        <!-- 第二步 end-->
+        <!-- 第三步 -->
+        <div id="first_third"></div>
+        <!-- 第三步 end -->
+
+      </div>
+      <!-- full_left end -->
+      
+      <!-- full_right  -->
+      <div class="full_right col help">
+        <h3>上传帮助 <span class="tip">help</span></h3>
+        <ul>
+          <li><span class="num">1、</span>每张图大小不超过2M,支持.jpg .gif .png格式图片</li>
+          <li><span class="num">2、</span>请勿上传包含不良信息的违规图片</li>
+          <li><span class="num">3、</span>凡上传图片中涉及有关版权、肖像权问题由上传用户自行负责</li>
+          <li><span class="num">4、</span>第一张上传图片默认为该图集封面</li>
+          <li><span class="num">5、</span>图集标准限填30个字符,图片标题限填100个字符</li>
+          
+        </ul>
+      </div>
+      <!-- full_right end -->
+    </div>
+    <!-- 主体内容 end  -->
+  </div>
+  <!-- main end  -->
+
+  <!-- 脚本 -->
+  <script data-main="../js/config" src="../js/require.js"></script>
+  <script type="text/javascript">require(['index/main']);</script>
+</body>
+</html>

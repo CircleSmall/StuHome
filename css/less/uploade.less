@@ -1,0 +1,142 @@
+@import "base.less";
+
+@import url('gb.css');
+
+#main {
+	.title {
+		span.col {
+			.f(21px);
+			.h(41px);
+			line-height: 41px;
+			.c(#2ea436);
+			font-weight: bold;
+			border-left: 4px solid #2ea436;
+			.ml(16px);
+			.pl(9px);
+		}
+	}
+
+	.uploade-nav {
+		.m(35px 0);
+		.glw(0.368);
+		.h(41.33333px);
+		background: url("@{imgUrl}uploade/uploade-nav.png") no-repeat 0 0;
+	}
+
+	form {
+		.p(5px);
+		.f(15px);
+		.row {
+			.m(29/2px 29/2px 0 0 );
+
+			.label {
+				.glw(84/1160);
+				.h(30px);
+				line-height: 30px;
+				text-align:left;
+				.c(#4d4f4e);
+				font-family: bold;
+			}
+			input,select,textarea {
+				.h(30px);
+				line-height: 30px;
+				.glw(547/1160);
+				.b(#b3b3b3);
+				.p(0 20px);
+			}
+			.contact-person {
+				.glw(124/1160);
+			}
+			.contact-phone {
+				.glw(155/1160);
+			}
+			.school {
+				.glw(155/1160);
+			}
+			.room-intro {
+				.h(100px);
+				.mb(30px);
+			}
+			.price,.area {
+				.glw(132/1160);
+			}
+			.hot-water,.network {
+				.h(30px);
+				line-height: 30px;
+				input {
+					.h(15px);
+					line-height: 15px;
+					.glw(42/1160);
+				}
+			}
+
+			.add {
+				.pl(13px);
+				span {
+					.fl();
+					.h(30px);
+					line-height: 30px;
+					.c(#898989);
+				}
+				span.xing {
+					.c(#e40011);
+					font-weight: bold;
+					.pt(3px);
+					.pr(5px);
+				}
+			}
+		}
+
+		.line {
+			border-bottom: 1px dotted #b3b3b3;
+			.p(16px 0);
+			.mb(25px);
+		}
+
+		.form-btn {
+			.p(9px);
+			.b(#000000);
+			.f(18px);
+			.c(#fff);
+			.m(48px 0);
+			background: #f39801;
+			font-family: bold;
+		}
+	}
+
+	.help {
+		h3 {
+			background: url("@{imgUrl}uploade/uploade-help-title.png") no-repeat top left;
+			.h(55px);
+			line-height: 55px;
+			.f(18px);
+			.c(#828282);
+			font-weight: bold;
+			.pl(9px);
+			.tip {
+				.f(14px);
+				font-weight: normal;
+			}
+		}
+		ul {
+			.ml(7px);
+			background: url("@{imgUrl}uploade/uploade-help-body.png") repeat-y top left;
+			.w(100%);
+			.pt(10px);
+			li {
+				position:relative;
+				.f(13px);
+				line-height: 24px;
+				.pl(35px);
+				.w(207px);
+				.c(#090504);
+				.mb(15px);
+				.num {
+					position: absolute;
+					left: 11px;
+				}
+			}
+		}
+		
+	}
+}

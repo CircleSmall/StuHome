@@ -23,7 +23,7 @@ require(['common/common', 'index/index'], function($, index) {
 		ac_id: 0,
 		wc_condition_id: 0,
 		hot_water_id: 0,
-		price: $.J_json.stringify({min:0,max:1000000}),//price默认是无限
+		price: {min:0,max:1000000},//price默认是无限
 		page_index: 0
 	};
 
@@ -68,10 +68,11 @@ require(['common/common', 'index/index'], function($, index) {
 
 		if (type == "price") {
 
-			conditionData.price = $.J_json.stringify({
+			conditionData.price = {
 				min: parseInt($(this).attr("data-min")),
 				max: parseInt($(this).attr("data-max"))
-			});
+			};
+
 			$('.price', conTitle).text($(this).text());
 
 		} else if (type == "network") {

@@ -22,7 +22,7 @@ define('common/common',
 
 			//传送的字符串
 			var sendStr = obj.type + "=" + JSON.stringify(paraObj);
-
+			
 			if (obj.get) {
 				$.get(url, sendStr, function(returnData) {
 					callback && callback(returnData);
