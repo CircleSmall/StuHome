@@ -10,6 +10,11 @@
   border: 0 none;
 }
 /* config */
+#first_step,
+#second_step,
+#third_step {
+  display: none;
+}
 #main .title span.col {
   font-size: 21px;
   height: 41px;
@@ -21,14 +26,20 @@
   padding-left: 9px;
 }
 #main .uploade-nav {
+  display: none;
   margin: 35px 0;
   width: 441.6px;
   height: 41.33333px;
-  background: url("../../images/uploade/uploade-nav.png") no-repeat 0 0;
 }
 #main form {
   padding: 5px;
   font-size: 15px;
+}
+#main form .title {
+  color: #2ba337;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
 }
 #main form .row {
   margin: 14.5px 14.5px 0 0;
@@ -93,6 +104,24 @@
   padding-top: 3px;
   padding-right: 5px;
 }
+#main form .row .add.pic-add {
+  margin-left: 70px;
+}
+#main form .row .choose {
+  padding: 6px 17px;
+  color: #000000;
+  background: #efefef;
+  border: 1px solid #b4b4b4;
+}
+#main form .row .pic-intro {
+  width: 610.34482759px;
+  height: 70px;
+}
+#main form .row .content {
+  width: 620.68965517px;
+  height: 30px;
+  line-height: 30px;
+}
 #main form .line {
   border-bottom: 1px dotted #b3b3b3;
   padding: 16px 0;
@@ -106,6 +135,48 @@
   margin: 48px 0;
   background: #f39801;
   font-family: bold;
+}
+#main form .add-picture {
+  display: block;
+  font-size: 16px;
+  center-align: left;
+}
+#main form .add-picture a {
+  color: #2f3332;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #7f7f7f;
+}
+#main form .form-return {
+  color: #f29700;
+  font-size: 20px;
+  margin-left: 40px;
+  background: none;
+  border: none;
+}
+#main .completed {
+  margin-top: 20px;
+}
+#main .completed h3 {
+  background: url("../../images/uploade/uploade-complete.png") no-repeat top left;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 65px;
+  font-size: 23px;
+  color: #e95412;
+}
+#main .completed ul {
+  margin-bottom: 41px;
+}
+#main .completed ul li {
+  margin: 15px;
+  font-size: 15px;
+}
+#main .completed .completed_btn {
+  background: #efefef;
+  padding: 7px 25px;
+  border: 1px solid #b5b5b5;
+  margin-left: 35px;
+  font-size: 15px;
 }
 #main .help h3 {
   background: url("../../images/uploade/uploade-help-title.png") no-repeat top left;

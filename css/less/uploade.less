@@ -2,6 +2,10 @@
 
 @import url('gb.css');
 
+#first_step,#second_step,#third_step {
+	display:none;
+}
+
 #main {
 	.title {
 		span.col {
@@ -17,15 +21,24 @@
 	}
 
 	.uploade-nav {
+		display:none;
 		.m(35px 0);
 		.glw(0.368);
 		.h(41.33333px);
-		background: url("@{imgUrl}uploade/uploade-nav.png") no-repeat 0 0;
+		//background: url("@{imgUrl}uploade/uploade-nav.png") no-repeat 0 0;
+		//background: url("@{imgUrl}uploade/uploade-nav.png") no-repeat 50% 50%;
+		//background: url("@{imgUrl}uploade/uploade-nav.png") no-repeat 100% 100%;
 	}
 
 	form {
 		.p(5px);
 		.f(15px);
+		.title {
+			.c(#2ba337);
+			.f(20px);
+			font-weight: bold;
+			.m(20px 0);
+		}
 		.row {
 			.m(29/2px 29/2px 0 0 );
 
@@ -85,6 +98,28 @@
 					.pr(5px);
 				}
 			}
+
+			.add.pic-add {
+				.ml(70px);
+			}
+
+			.choose {
+				.p(6px 17px);
+				.c(#000);
+				background: #efefef;
+				.b(#b4b4b4);
+			}
+
+			.pic-intro {
+				.glw(590/1160);
+				.h(70px);
+			}
+
+			.content {
+				.glw(600/1160);
+				.h(30px);
+				line-height: 30px;
+			}
 		}
 
 		.line {
@@ -101,6 +136,53 @@
 			.m(48px 0);
 			background: #f39801;
 			font-family: bold;
+		}
+
+		.add-picture {
+			display:block;
+			.f(16px);
+			center-align: left;
+		}
+
+		.add-picture a {
+			.c(#2f3332);
+			.pb(2px);
+			border-bottom: 2px solid #7f7f7f;
+		}
+
+		.form-return {
+			.c(#f29700);
+			.f(20px);
+			.ml(40px);
+			background:none;
+			border:none;
+		}
+	}
+
+	//房间上传成功的样式
+	.completed {
+		.mt(20px);
+		h3 {
+			background: url("@{imgUrl}uploade/uploade-complete.png") no-repeat top left;
+			.h(60px);
+			line-height:60px;
+			.pl(65px);
+			.f(23px);
+			.c(#e95412);
+		}
+		ul {
+			li {
+				.m(15px);
+				.f(15px);
+			}
+			.mb(41px);
+		}
+		.completed_btn {
+			background: #efefef;
+			.p(7px 25px);
+			.b(#b5b5b5);
+			.ml(35px);
+			.f(15px);
 		}
 	}
 

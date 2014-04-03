@@ -154,5 +154,4 @@ require(['common/common', 'index/index'], function($, index) {
 	var school = $('span.school',conTitle);
 	school.text(preLoadData.school.content);
 	showCondition();
-
 })
