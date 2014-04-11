@@ -30,20 +30,20 @@
   width: 441.6px;
   height: 41.33333px;
 }
-#main form {
+#main .J_panel {
   padding: 5px;
   font-size: 15px;
 }
-#main form .title {
+#main .J_panel .title {
   color: #2ba337;
   font-size: 20px;
   font-weight: bold;
   margin: 20px 0;
 }
-#main form .row {
+#main .J_panel .row {
   margin: 14.5px 14.5px 0 0;
 }
-#main form .row .label {
+#main .J_panel .row .label {
   width: 86.89655172px;
   height: 30px;
   line-height: 30px;
@@ -51,62 +51,62 @@
   color: #4d4f4e;
   font-family: bold;
 }
-#main form .row input,
-#main form .row select,
-#main form .row textarea {
+#main .J_panel .row input,
+#main .J_panel .row select,
+#main .J_panel .row textarea {
   height: 30px;
   line-height: 30px;
   width: 565.86206897px;
   border: 1px solid #b3b3b3;
-  padding: 0 20px;
+  padding: 0 5px;
 }
-#main form .row .contact-person {
+#main .J_panel .row .contact-person {
   width: 128.27586207px;
 }
-#main form .row .contact-phone {
+#main .J_panel .row .contact-phone {
   width: 160.34482759px;
 }
-#main form .row .school {
+#main .J_panel .row .school {
   width: 160.34482759px;
 }
-#main form .row .room-intro {
+#main .J_panel .row .room-intro {
   height: 100px;
   margin-bottom: 30px;
 }
-#main form .row .price,
-#main form .row .area {
+#main .J_panel .row .price,
+#main .J_panel .row .area {
   width: 136.55172414px;
 }
-#main form .row .hot-water,
-#main form .row .network {
+#main .J_panel .row .hot-water,
+#main .J_panel .row .network {
   height: 30px;
   line-height: 30px;
 }
-#main form .row .hot-water input,
-#main form .row .network input {
+#main .J_panel .row .hot-water input,
+#main .J_panel .row .network input {
   height: 15px;
   line-height: 15px;
   width: 43.44827586px;
 }
-#main form .row .add {
+#main .J_panel .row .add {
   padding-left: 13px;
 }
-#main form .row .add span {
+#main .J_panel .row .add span {
   float: left;
   height: 30px;
   line-height: 30px;
   color: #898989;
 }
-#main form .row .add span.xing {
+#main .J_panel .row .add span.xing {
   color: #e40011;
   font-weight: bold;
   padding-top: 3px;
   padding-right: 5px;
 }
-#main form .row .add.pic-add {
+#main .J_panel .row .add.pic-add {
   margin-left: 70px;
 }
-#main form .row .choose {
+#main .J_panel .row .choose {
   position: relative;
   padding: 6px 17px;
   color: #000000;
@@ -114,7 +114,7 @@
   border: 1px solid #b4b4b4;
   cursor: pointer;
 }
-#main form .row .choose .file {
+#main .J_panel .row .choose .file {
   position: absolute;
   overflow: hidden;
   opacity: 0;
@@ -125,27 +125,28 @@
   top: 0px;
   left: 0px;
 }
-#main form .row .choose .file input {
+#main .J_panel .row .choose .file input {
   border: none;
   width: 100%;
   height: 100%;
   padding: 0;
 }
-#main form .row .pic-intro {
-  width: 610.34482759px;
-  height: 70px;
-}
-#main form .row .content {
+#main .J_panel .row .content {
   width: 620.68965517px;
   height: 30px;
   line-height: 30px;
 }
-#main form .line {
+#main .J_panel .showImg img {
+  width: 400px;
+  height: 300px;
+  margin: 26px 85px;
+}
+#main .J_panel .line {
   border-bottom: 1px dotted #b3b3b3;
   padding: 16px 0;
   margin-bottom: 25px;
 }
-#main form .form-btn {
+#main .J_panel .form-btn {
   padding: 9px;
   border: 1px solid #000000;
   font-size: 18px;
@@ -155,17 +156,17 @@
   font-family: bold;
   display: inline-block;
 }
-#main form .add-picture {
+#main .J_panel .add-picture {
   display: block;
   font-size: 16px;
   center-align: left;
 }
-#main form .add-picture a {
+#main .J_panel .add-picture a {
   color: #2f3332;
   padding-bottom: 2px;
   border-bottom: 2px solid #7f7f7f;
 }
-#main form .form-return {
+#main .J_panel .form-return {
   color: #f29700;
   font-size: 20px;
   margin-left: 40px;

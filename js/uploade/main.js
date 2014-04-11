@@ -1,48 +1,79 @@
-require(['common/common', 'uploade/uploade'], function($, uploade) {
+require(['common/common', 'uploade/uploade', 'server/server'], function($, uploade, server) {
 
 	var J_first = $('#first_step');
 	var J_second = $('#second_step');
 	var J_third = $('#third_step');
 	var J_done = $('#J_done');
 
-	var FORM_STR;
+	var FORM_DATA = {};
+	var FORM_IMG = {};
 
-	// 点击事件监听
+	var onePicStr = $('.J_onePic').html();
+
+	// 点击第一步的下一步
 	$('#J_first_next', J_first).click(function() {
-		FORM_STR = $('form',J_first).formSerialize();
-		console.log(FORM_STR);
+		FORM_DATA = {}; //清空表单数据
+		FORM_DATA = $.J_translateFormData($('form', J_first));
+		FORM_DATA.photo = FORM_IMG;
 		$.J_url.setHash('second');
 	});
 
 	//点击选择图片
-	$('.J_uploade_img_input', J_second).change(function() {
-
-		var me = $(this);
-		//限制图片类型
-		var filepath = me.val();
-		var extStart = filepath.lastIndexOf(".");
-		var ext = filepath.substring(extStart, filepath.length).toUpperCase();
-		if (ext != ".JPG" && ext != ".GIF" && ext != ".PNG" && ext != ".JPEG") {
-			alert("图片限于gif,png,jpg格式");
-			return false;
-		}
-		//限制图片大小
-		var img = new Image();
-		img.src = filepath;
-		img.onload = function(){
-			if (img.fileSize > 0) {
-				if (img.fileSize > 1 * 1024) {
-					alert("图片不大于2M。");
-					return false;
-				}
-			}
-		};
-
-		return true;
+	J_second.on("change",'.J_uploade_img_input',function(){
+		var onePic = $(this).parents('.J_onePic');
+		var form = $(this).parent();
+		uploade.checkImg(form, function(data) {
+			FORM_IMG["img_url" + onePic.attr('data-id')] = data.url;
+			var imgUrl = server.baseUrl + data.url;
+			var str = '<img src="' + imgUrl + '" alt="">';
+			$('.showImg', onePic).html(str);
+		})
 	});
 
+	//点击继续添加图片
+	$('#J_addPic').click(function() {
+		var id = parseInt($(this).attr('data-total')) + 1;
+		$(this).parent().before('<div class="J_onePic" data-id="' + id + '">' + onePicStr + '</div>');
+		$(this).attr('data-total',id);
+	});
+
+	//点击第二步的下一步
+	$('#J_second_next', J_second).click(function() {
+		//序列化得到的表单元素
+		var templateData = [];
+		for (var i in FORM_DATA) {
+			if (i == "photo") {
+				//排除图片数据
+				continue;
+			}
+			var obj = {};
+			obj.name = i;
+			obj.value = FORM_DATA[i];
+			templateData.push(uploade.mapResultData(obj));
+		};
+
+		$.J_apply($('.J_template_third'), {
+			list: templateData
+		});
+
+		$.J_url.setHash('third');
+	});
+
+	//点击确认上传
+	$('#J_submit', J_third).click(function() {
+		uploade.uploadeData(FORM_DATA, function() {
+
+		});
+		$.J_url.setHash('done');
+	})
+
+	//点击继续上传
+	$('#J_continue_submit', J_done).click(function() {
+		location.reload();
+	})
+
 	//返回
-	$('.form-return').click(function(){
+	$('.form-return').click(function() {
 		history.go(-1);
 	});
 

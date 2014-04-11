@@ -17,7 +17,7 @@ define('common/common', function(require) {
 		var url = obj.url;
 		var para = obj.get || obj.post;
 		var paraObj = $.J_url.urlMerge(para, data);
-
+		
 		//传送的字符串
 		var sendStr = obj.type + "=" + JSON.stringify(paraObj);
 
@@ -56,6 +56,16 @@ define('common/common', function(require) {
 		}
 
 	};
+
+	//将表单数据转换成json字符串(表单元素必须有name和value)
+	$.J_translateFormData = function(obj) {
+		var obj = obj.formToArray();
+		var result = {};
+		for (var i in obj) {
+			result[obj[i].name] = obj[i].value;
+		}
+		return result;
+	}
 
 	$.J_mix = function() {
 		var re = {};
