@@ -1,14 +1,14 @@
 define('common/common', function(require) {
 
-	require('common/jquery');
-	require('common/json2');
+	require('jquery');
+	require('jquery-form')
+	require('json2');
 
 	$.J_cookie = require('common/cookie');
 	$.J_log = require('common/log');
 	$.J_json = JSON;
-	$.J_mustache = require('common/mustache');
+	$.J_mustache = require('mustache');
 	$.J_url = require('common/url');
-
 
 	$.J_xhr = function(obj, data, callback) {
 		if (!obj.url) {

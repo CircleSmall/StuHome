@@ -2,7 +2,7 @@
 
 @import url('gb.css');
 
-#first_step,#second_step,#third_step {
+.J_panel,.help {
 	display:none;
 }
 
@@ -104,10 +104,29 @@
 			}
 
 			.choose {
+				position:relative;
 				.p(6px 17px);
 				.c(#000);
 				background: #efefef;
 				.b(#b4b4b4);
+				cursor: pointer;
+				.file {
+					position: absolute; 
+					overflow: hidden; 
+					opacity: 0; 
+					zoom: 1; 
+					width: 96px; 
+					height: 32px; 
+					z-index: 1; 
+					top: 0px; 
+					left: 0px; 
+					input {
+						border: none; 
+						.w(100%);
+						.h(100%);
+						.p(0);
+					}
+				}
 			}
 
 			.pic-intro {
@@ -136,7 +155,10 @@
 			.m(48px 0);
 			background: #f39801;
 			font-family: bold;
+			display:inline-block;
 		}
+
+
 
 		.add-picture {
 			display:block;

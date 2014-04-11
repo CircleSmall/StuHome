@@ -33,10 +33,18 @@ define('server/server', function() {
 			},
 			type: "search"
 		}
+	};
+
+	var uploade = {
+		//上传接口
+		uploade: {
+			url: baseUrl + 'uploade.tpl'
+		}
 	}
 
 	return {
-		index: index //返回主页接口
+		index: index, //返回主页接口
+		uploade: uploade
 	}
 
 })
