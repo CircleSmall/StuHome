@@ -1,8 +1,8 @@
 /*服务器地址*/
 define('server/server', function() {
 
-	// var baseUrl = "http://localhost:8080/Stuhome/";
-	var baseUrl = "http://localhost/Stuhome/js/test/";
+	var baseUrl = "http://localhost:8080/Stuhome/";
+	// var baseUrl = "http://localhost/Stuhome/js/test/";
 
 	var index = {
 		//搜索条件
