@@ -1,14 +1,13 @@
 /*服务器地址*/
 define('server/server', function() {
 
-	// var baseUrl = "http://localhost:8080/Stuhome/js/test/";
-	var baseUrl = "http://127.0.0.1/stuhome/";
+	// var baseUrl = "http://localhost:8080/Stuhome/";
+	var baseUrl = "http://localhost/Stuhome/js/test/";
 
 	var index = {
 		//搜索条件
 		searchCondition: {
-			// url: baseUrl + 'RoomSearchServlet',
-			url: baseUrl + 'js/test/searchCondition.tpl',
+			url: baseUrl + 'RoomSearchServlet',
 			post: {
 				city_id: "?",
 				school_id: "?",
@@ -25,8 +24,7 @@ define('server/server', function() {
 
 		//搜索框
 		search: {
-			// url: baseUrl + 'RoomSearchServlet',
-			url: baseUrl + 'js/test/searchCondition.tpl',
+			url: baseUrl + 'RoomSearchServlet',
 			post: {
 				summary_des: "?",
 				page_index:"?"
@@ -38,7 +36,7 @@ define('server/server', function() {
 	var uploade = {
 		//上传接口(表单提交接口)
 		uploade: {
-			url: baseUrl + 'js/test/searchCondition.tpl',
+			url: baseUrl + 'RoomUploadServlet',
 			post: {
 				abstract_text: "?",
 				owner_name: "?",
@@ -56,14 +54,24 @@ define('server/server', function() {
 		},
 		//检查图片的接口
 		checkImg: {
-			url: baseUrl + 'js/test/searchCondition.tpl'
+			url: baseUrl + 'ImageCheckServlet'
+		}
+	}
+
+	var detail = {
+		detail: {
+			url: baseUrl + 'RoomDetailServlet',
+			post: {
+				room_id: "?"
+			}
 		}
 	}
 
 	return {
 		baseUrl: baseUrl,
 		index: index, //返回主页接口
-		uploade: uploade
+		uploade: uploade,
+		detail: detail
 	}
 
 })

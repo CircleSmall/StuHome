@@ -17,9 +17,12 @@ define('common/common', function(require) {
 		var url = obj.url;
 		var para = obj.get || obj.post;
 		var paraObj = $.J_url.urlMerge(para, data);
+		var sendStr = JSON.stringify(paraObj);
 		
 		//传送的字符串
-		var sendStr = obj.type + "=" + JSON.stringify(paraObj);
+		if (obj.type) {
+			sendStr = obj.type + "=" + sendStr;
+		}
 
 		if (obj.get) {
 			$.get(url, sendStr, function(returnData) {
