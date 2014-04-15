@@ -22,8 +22,6 @@ define('uploade/uploade', ['common/common', 'server/server'], function($, server
 		bizObj.formData.network_condition_id = data.network_condition_id,
 		bizObj.formData.photo = data.photo; //图片url
 
-		console.log(bizObj)
-
 		$.J_xhr(server.uploade, bizObj.formData, function(data) {
 			//回调函数
 			callback && callback($.J_json.parse(data));

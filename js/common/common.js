@@ -55,6 +55,7 @@ define('common/common', function(require) {
 				$(el).before(str);
 				$(el).remove();
 			}
+			callback && callback();
 
 		}
 

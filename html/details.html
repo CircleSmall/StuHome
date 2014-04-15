@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- <base href="http://localhost/Stuhome/html/" /> -->
+  <base href="http://localhost:8080/Stuhome/html/" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style/details.css">
+  <title>学生之家</title>
+</head>
+<body>
+  <!-- 页头 -->
+  <div id="header" class="">
+    <div class="container">
+      <ul class="nav">
+        <li class="active">
+          <a href="index.html">主页</a>
+        </li>
+        <li>
+          <a href="">今日推荐</a>
+        </li>
+        <li>
+          <a href="">投诉房间</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- 页头end -->
+
+  <!-- main -->
+  <div id="main" class="container">
+    <!-- search  -->
+    <div class="search row">
+      <div class="logo col">
+        <img src="../images/logo.png" alt="" class="img"></div>
+
+      <form role="form" class="col">
+        <input type="text" class="form-control input" placeholder="请输入城市、学校、房间等关键词" id="J_search_input"></form>
+      <button class="btn col" id="J_search_btn">搜&nbsp;&nbsp;索</button>
+    </div>
+    <!-- search end -->
+
+    <!-- 主体内容 -->
+    <div class="body row">
+      <!-- full_left -->
+      <div class="full_left col">
+        <textarea class="J_template J_template_detail">
+        <div class="detail">
+          <h3 class="title">{{abstract_text}}</h3>
+          <p class="time">{{time}}</p>
+          <div class="row">
+            <div class="imgShow col">
+              <img class="show" src="../images/1.jpg" alt="">
+              <div class="slider row">  
+                <span class="direction left col">&lt;</span>
+                <div class="sliderRelative col">
+                  <div class="sliderAbsolute">
+                    <div class=" col item active"><img src="../images/1.jpg" alt=""></div>
+                    <div class=" col item"><img src="../images/2.jpg" alt=""></div>
+                    <div class=" col item"><img src="../images/3.jpg" alt=""></div>
+                    <div class=" col item"><img src="../images/4.jpg" alt=""></div>
+                    <div class=" col item"><img src="../images/5.jpg" alt=""></div>
+                  </div>
+                  
+                </div>
+                <span class="direction right col">&gt;</span>
+              </div>
+            </div>
+            <div class="infoShow col">
+              <div class="row">
+                <span class="col name price">租金价格: </span>
+                <span class="price col value">{{price}}元/天</span>
+              </div>
+              <div class="row">
+                <span class="name col">区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间: </span>
+                <span class="value col">邻近{{school_id}}</span>
+              </div>
+              <div class="row">
+                <span class="name col">地&nbsp;&nbsp;&nbsp;&nbsp;址 : </span>
+                <span class="value col">{{address}}</span>
+              </div>
+              <div class="row">
+                <span class="name col">面&nbsp;&nbsp;&nbsp;&nbsp;积 : </span>
+                <span class="value col">{{square}}</span>
+              </div>
+              <div class="row">
+
+                <span class="name col">简&nbsp;&nbsp;&nbsp;&nbsp;介 : </span>
+                <span class="value col">
+                  {{brief}}
+                </span>
+              </div>
+              <div class="row">
+                <span class="name col">卫&nbsp;生&nbsp;间 : </span>
+                <span class="value col">{{wc_condition_id}}</span>
+              </div>
+              <div class="row">
+                <span class="name col">温&nbsp;&nbsp;&nbsp;&nbsp;控 : </span>
+                <span class="value col">{{ac_id}}</span>
+              </div>
+              <div class="row">
+                <span class="name col">网&nbsp;&nbsp;&nbsp;&nbsp;络 : </span>
+                <span class="value col">{{network_condition_id}}</span>
+              </div>
+              <div class="row">
+                <span class="name col">厨&nbsp;&nbsp;&nbsp;&nbsp;房 : </span>
+                <span class="value col">{{chufang}}</span>
+              </div>
+              <p class="row searchRoom">锁房号:{{room_id}}</p>
+              <div class="reserve">
+                <button class="btn">预订房间</button>
+                <span class="add">点击此处通过网站预订该房间</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        </textarea>
+      </div>
+      <!-- full_left end -->
+
+      <!-- full_right -->
+      <div class="full_right col"></div>
+      <!-- full_right end --> </div>
+    <!-- body end --> </div>
+  <!-- main end -->
+
+  <!-- 脚本 -->
+  <script type="text/javascript">
+  //页面初始化数据
+  var preLoadData = {
+    room_id: 14
+  }
+  </script>
+  <script data-main="../js/config" src="../js/require.js"></script>
+  <script type="text/javascript">require(['detail/main']);</script>
+</body>
+</html>

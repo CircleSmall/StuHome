@@ -1,0 +1,116 @@
+@import "base.less";
+
+@import url('gb.css');
+@import url('search.css');
+
+#main {
+	.detail {
+		.mt(50px);
+		.title {
+			.f(20px);
+			.c(@pcolor3);
+		}
+		.time {
+			.c(#999999);
+			.f(10px);
+		}
+
+		//图片区域
+		.imgShow{
+			.mt(23px);
+			.glw(400/1127);
+			.show {
+				.b(@pcolor3);
+				.w(400px);
+				.h(300px);
+			}
+			.slider {
+				.pl(5px);
+				.mt(13px);
+				.col {
+					.ml(2px);
+				}
+
+				.direction {
+					.c(@pcolor3);
+					.f(26px);
+					line-height: 60px;
+					font-weight: bold;
+				}
+				.direction.left {
+					.ml(-10px);
+				}
+				.direction.right {
+				}
+
+				.sliderRelative {
+					position:relative;
+					.w(365px);
+					.h(70px);
+					overflow:hidden;
+					.sliderAbsolute{
+						position: absolute;
+						top:0;
+						left:0;
+						width: 10000px;
+						.item{
+							.w(88px);
+							.h(70px);
+							line-height: 70px;
+							text-align: center;
+						}
+						.item img {
+							.w(80px);
+							.h(60px);
+							.b(#959595);
+							cursor:pointer;
+							display:inline;
+						}
+						.item.active img {
+							//border: 3px solid #22ab37;
+							.b(#000);
+						}
+					}
+				}
+			}
+		}
+
+		//文字区域
+		.infoShow {
+			.mt(23px);
+			.glw(419/1127);
+			.f(14px);
+			.row {
+				.mb(16px);
+				.name {
+					.glw(60/1127);
+				};
+				.value {
+					.glw(340/1127);
+				}
+				.value.price {
+					.c(@pcolor3);
+					.f(26px);
+				}
+				.name.price {
+					.h(32px);
+					line-height: 32px;
+				}
+			}
+			.searchRoom {
+				.c(@pcolor3);
+				.f(19px);
+			}
+			.reserve {
+				.btn{
+					.f(18px);
+				}
+				.add {
+					.c(#eb6100);
+					.f(12px);
+				}
+			}
+		}
+	}
+}
+

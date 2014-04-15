@@ -1,0 +1,110 @@
+@import url('gb.css');
+@import url('search.css');
+/*基本函数*/
+.nom {
+  margin: 0;
+}
+.nop {
+  padding: 0;
+}
+.nob {
+  border: 0 none;
+}
+/* config */
+#main .detail {
+  margin-top: 50px;
+}
+#main .detail .title {
+  font-size: 20px;
+  color: #22ab39;
+}
+#main .detail .time {
+  color: #999999;
+  font-size: 10px;
+}
+#main .detail .imgShow {
+  margin-top: 23px;
+  width: 425.90949423px;
+}
+#main .detail .imgShow .show {
+  border: 1px solid #22ab39;
+  width: 400px;
+  height: 300px;
+}
+#main .detail .imgShow .slider {
+  padding-left: 5px;
+  margin-top: 13px;
+}
+#main .detail .imgShow .slider .col {
+  margin-left: 2px;
+}
+#main .detail .imgShow .slider .direction {
+  color: #22ab39;
+  font-size: 26px;
+  line-height: 60px;
+  font-weight: bold;
+}
+#main .detail .imgShow .slider .direction.left {
+  margin-left: -10px;
+}
+#main .detail .imgShow .slider .sliderRelative {
+  position: relative;
+  width: 365px;
+  height: 70px;
+  overflow: hidden;
+}
+#main .detail .imgShow .slider .sliderRelative .sliderAbsolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10000px;
+}
+#main .detail .imgShow .slider .sliderRelative .sliderAbsolute .item {
+  width: 88px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+}
+#main .detail .imgShow .slider .sliderRelative .sliderAbsolute .item img {
+  width: 80px;
+  height: 60px;
+  border: 1px solid #959595;
+  cursor: pointer;
+  display: inline;
+}
+#main .detail .imgShow .slider .sliderRelative .sliderAbsolute .item.active img {
+  border: 1px solid #000000;
+}
+#main .detail .infoShow {
+  margin-top: 23px;
+  width: 446.14019521px;
+  font-size: 14px;
+}
+#main .detail .infoShow .row {
+  margin-bottom: 16px;
+}
+#main .detail .infoShow .row .name {
+  width: 63.88642413px;
+}
+#main .detail .infoShow .row .value {
+  width: 362.0230701px;
+}
+#main .detail .infoShow .row .value.price {
+  color: #22ab39;
+  font-size: 26px;
+}
+#main .detail .infoShow .row .name.price {
+  height: 32px;
+  line-height: 32px;
+}
+#main .detail .infoShow .searchRoom {
+  color: #22ab39;
+  font-size: 19px;
+}
+#main .detail .infoShow .reserve .btn {
+  font-size: 18px;
+}
+#main .detail .infoShow .reserve .add {
+  color: #eb6100;
+  font-size: 12px;
+}
