@@ -50,16 +50,14 @@
           <p class="time">{{time}}</p>
           <div class="row">
             <div class="imgShow col">
-              <img class="show" src="../images/1.jpg" alt="">
+              <img class="show" src="" alt="">
               <div class="slider row">  
                 <span class="direction left col">&lt;</span>
                 <div class="sliderRelative col">
-                  <div class="sliderAbsolute">
-                    <div class=" col item active"><img src="../images/1.jpg" alt=""></div>
-                    <div class=" col item"><img src="../images/2.jpg" alt=""></div>
-                    <div class=" col item"><img src="../images/3.jpg" alt=""></div>
-                    <div class=" col item"><img src="../images/4.jpg" alt=""></div>
-                    <div class=" col item"><img src="../images/5.jpg" alt=""></div>
+                  <div class="sliderAbsolute" style="left:0px;">
+                    {{#img_path}}
+                    <div class=" col item"><img src="{{url}}" alt=""></div>
+                    {{/img_path}}
                   </div>
                   
                 </div>
@@ -83,11 +81,10 @@
                 <span class="name col">面&nbsp;&nbsp;&nbsp;&nbsp;积 : </span>
                 <span class="value col">{{square}}</span>
               </div>
-              <div class="row">
-
+              <div class="row brief">
                 <span class="name col">简&nbsp;&nbsp;&nbsp;&nbsp;介 : </span>
                 <span class="value col">
-                  {{brief}}
+                  {{other}}
                 </span>
               </div>
               <div class="row">
@@ -101,10 +98,6 @@
               <div class="row">
                 <span class="name col">网&nbsp;&nbsp;&nbsp;&nbsp;络 : </span>
                 <span class="value col">{{network_condition_id}}</span>
-              </div>
-              <div class="row">
-                <span class="name col">厨&nbsp;&nbsp;&nbsp;&nbsp;房 : </span>
-                <span class="value col">{{chufang}}</span>
               </div>
               <p class="row searchRoom">锁房号:{{room_id}}</p>
               <div class="reserve">
