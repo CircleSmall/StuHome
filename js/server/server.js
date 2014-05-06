@@ -41,13 +41,16 @@ define('server/server', function() {
 				abstract_text: "?",
 				owner_name: "?",
 				owner_phone: "?",
+				owner_type_id: "?",
 				school_id: "?",
 				address: "?",
 				other: "?",
 				price: "?",
 				square: "?",
+				size_des:"?",
 				hot_water_id: "?",
 				network_condition_id: "?",
+				ac_id:"?",
 				photo: "?"//图片url
 			},
 			type: "upload"

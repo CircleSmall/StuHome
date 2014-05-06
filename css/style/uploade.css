@@ -78,12 +78,16 @@
   width: 136.55172414px;
 }
 #main .J_panel .row .hot-water,
-#main .J_panel .row .network {
+#main .J_panel .row .network,
+#main .J_panel .row .ac,
+#main .J_panel .row .owner-type {
   height: 30px;
   line-height: 30px;
 }
 #main .J_panel .row .hot-water input,
-#main .J_panel .row .network input {
+#main .J_panel .row .network input,
+#main .J_panel .row .ac input,
+#main .J_panel .row .owner-type input {
   height: 15px;
   line-height: 15px;
   width: 43.44827586px;

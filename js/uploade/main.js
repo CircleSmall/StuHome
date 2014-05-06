@@ -23,7 +23,7 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 		var onePic = $(this).parents('.J_onePic');
 		var form = $(this).parent();
 		uploade.checkImg(form, function(data) {
-			var result = $.J_json.parse(data);
+			var result = data;
 			if (result.check_result == "ok") {
 				FORM_IMG["img_url" + onePic.attr('data-id')] = result.img_path;
 				var imgUrl = server.baseUrl + result.img_path;

@@ -21,6 +21,9 @@ define('uploade/uploade', ['common/common', 'server/server'], function($, server
 		bizObj.formData.hot_water_id = data.hot_water_id,
 		bizObj.formData.network_condition_id = data.network_condition_id,
 		bizObj.formData.photo = data.photo; //图片url
+		bizObj.formData.owner_type_id = data.owner_type_id;
+		bizObj.formData.ac_id = data.ac_id;
+		bizObj.formData.size_des = data.size_des;
 
 		$.J_xhr(server.uploade, bizObj.formData, function(data) {
 			//回调函数
@@ -74,7 +77,7 @@ define('uploade/uploade', ['common/common', 'server/server'], function($, server
 			obj.value = data.value;
 		}
 		if (data.name == "square") {
-			obj.name = "面积";
+			obj.name = "房间大小";
 			obj.value = data.value;
 		}
 		if (data.name == "hot_water_id") {
@@ -82,8 +85,20 @@ define('uploade/uploade', ['common/common', 'server/server'], function($, server
 			obj.value = data.value == 1 ? "有" : "无";
 		}
 		if (data.name == "network_condition_id") {
+			obj.name = "网络";
+			obj.value = data.value == 1 ? "有" : "无";
+		}
+		if (data.name == "ac_id") {
 			obj.name = "空调";
 			obj.value = data.value == 1 ? "有" : "无";
+		}
+		if (data.name == "size_des") {
+			obj.name = "几室几厅";
+			obj.value = data.value;
+		}
+		if (data.name == "owner_type_id") {
+			obj.name = "房源类型";
+			obj.value = data.value == 1 ? "个人租赁" : "经纪人租赁";
 		}
 
 		return obj;
