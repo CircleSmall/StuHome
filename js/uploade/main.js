@@ -57,8 +57,8 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 			obj.value = FORM_DATA[i];
 			templateData.push(uploade.mapResultData(obj));
 		};
-
-		$.J_apply($('.J_template_third'), {
+		J_third.children('.row').remove();
+		$.J_apply($('.J_template_third'),{
 			list: templateData
 		});
 
