@@ -19,14 +19,20 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 	});
 
 	//点击选择图片
-	J_second.on("change",'.J_uploade_img_input',function(){
+	J_second.on("change", '.J_uploade_img_input', function() {
 		var onePic = $(this).parents('.J_onePic');
 		var form = $(this).parent();
 		uploade.checkImg(form, function(data) {
-			FORM_IMG["img_url" + onePic.attr('data-id')] = data.url;
-			var imgUrl = server.baseUrl + data.url;
-			var str = '<img src="' + imgUrl + '" alt="">';
-			$('.showImg', onePic).html(str);
+			var result = $.J_json.parse(data);
+			if (result.check_result == "ok") {
+				FORM_IMG["img_url" + onePic.attr('data-id')] = result.img_path;
+				var imgUrl = server.baseUrl + result.img_path;
+				var str = '<img src="' + imgUrl + '" alt="">';
+				$('.showImg', onePic).html(str);
+			} else {
+				return;
+			}
+
 		})
 	});
 
@@ -34,7 +40,7 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 	$('#J_addPic').click(function() {
 		var id = parseInt($(this).attr('data-total')) + 1;
 		$(this).parent().before('<div class="J_onePic" data-id="' + id + '">' + onePicStr + '</div>');
-		$(this).attr('data-total',id);
+		$(this).attr('data-total', id);
 	});
 
 	//点击第二步的下一步
@@ -62,9 +68,8 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 	//点击确认上传
 	$('#J_submit', J_third).click(function() {
 		uploade.uploadeData(FORM_DATA, function() {
-
+			$.J_url.setHash('done');
 		});
-		$.J_url.setHash('done');
 	})
 
 	//点击继续上传

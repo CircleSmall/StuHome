@@ -55,6 +55,7 @@ define('server/server', function() {
 		//检查图片的接口
 		checkImg: {
 			url: baseUrl + 'ImageCheckServlet'
+			// url: baseUrl + 'ImageCheckServlet.php'
 		}
 	}
 

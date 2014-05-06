@@ -34,7 +34,9 @@ define('uploade/uploade', ['common/common', 'server/server'], function($, server
 			url: server.checkImg.url,
 			dataType: 'json',
 			type: "post",
-			success: callback
+			success: callback,
+			resetForm: false,
+			clearForm: false
 		};
 		$(form).ajaxSubmit(options);
 	}
