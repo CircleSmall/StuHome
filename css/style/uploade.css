@@ -56,7 +56,7 @@
 #main .J_panel .row textarea {
   height: 30px;
   line-height: 30px;
-  width: 565.86206897px;
+  width: 506.89655172px;
   border: 1px solid #b3b3b3;
   padding: 0 5px;
 }
@@ -66,7 +66,8 @@
 #main .J_panel .row .contact-phone {
   width: 160.34482759px;
 }
-#main .J_panel .row .school {
+#main .J_panel .row .school,
+#main .J_panel .row .city {
   width: 160.34482759px;
 }
 #main .J_panel .row .room-intro {
@@ -80,14 +81,16 @@
 #main .J_panel .row .hot-water,
 #main .J_panel .row .network,
 #main .J_panel .row .ac,
-#main .J_panel .row .owner-type {
+#main .J_panel .row .owner-type,
+#main .J_panel .row .wc {
   height: 30px;
   line-height: 30px;
 }
 #main .J_panel .row .hot-water input,
 #main .J_panel .row .network input,
 #main .J_panel .row .ac input,
-#main .J_panel .row .owner-type input {
+#main .J_panel .row .owner-type input,
+#main .J_panel .row .wc input {
   height: 15px;
   line-height: 15px;
   width: 43.44827586px;
@@ -106,6 +109,11 @@
   font-weight: bold;
   padding-top: 3px;
   padding-right: 5px;
+}
+#main .J_panel .row .add span.warn {
+  font-size: 12px;
+  color: #ff0000;
+  margin-left: 5px;
 }
 #main .J_panel .row .add.pic-add {
   margin-left: 70px;

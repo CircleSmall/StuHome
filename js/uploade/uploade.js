@@ -10,20 +10,22 @@ define('uploade/uploade', ['common/common', 'server/server'], function($, server
 	//上传接口
 	function uploadeData(data, callback) {
 
-		bizObj.formData.abstract_text = data.abstract_text,
-		bizObj.formData.owner_name = data.owner_name,
-		bizObj.formData.owner_phone = data.owner_phone,
-		bizObj.formData.school_id = data.school_id,
-		bizObj.formData.address = data.address,
-		bizObj.formData.other = data.other,
-		bizObj.formData.price = data.price,
-		bizObj.formData.square = data.square,
-		bizObj.formData.hot_water_id = data.hot_water_id,
-		bizObj.formData.network_condition_id = data.network_condition_id,
+		bizObj.formData.abstract_text = data.abstract_text;
+		bizObj.formData.owner_name = data.owner_name;
+		bizObj.formData.owner_phone = data.owner_phone;
+		bizObj.formData.school_id = parseInt(data.school_id);
+		bizObj.formData.address = data.address;
+		bizObj.formData.other = data.other;
+		bizObj.formData.price = data.price;
+		bizObj.formData.square = parseInt(data.square);
+		bizObj.formData.hot_water_id = parseInt(data.hot_water_id);
+		bizObj.formData.network_condition_id = parseInt(data.network_condition_id);
 		bizObj.formData.photo = data.photo; //图片url
-		bizObj.formData.owner_type_id = data.owner_type_id;
-		bizObj.formData.ac_id = data.ac_id;
+		bizObj.formData.owner_type_id = parseInt(data.owner_type_id);
+		bizObj.formData.ac_id = parseInt(data.ac_id);
 		bizObj.formData.size_des = data.size_des;
+		bizObj.formData.wc_condition_id = parseInt(data.wc_condition_id);
+		bizObj.formData.city_id = parseInt(data.city_id);
 
 		$.J_xhr(server.uploade, bizObj.formData, function(data) {
 			//回调函数
@@ -99,6 +101,14 @@ define('uploade/uploade', ['common/common', 'server/server'], function($, server
 		if (data.name == "owner_type_id") {
 			obj.name = "房源类型";
 			obj.value = data.value == 1 ? "个人租赁" : "经纪人租赁";
+		}
+		if (data.name == "wc_condition_id") {
+			obj.name = "卫生间";
+			obj.value = data.value == 1 ? "有" : "无";
+		}
+		if (data.name == "city_id") {
+			obj.name = "城市";
+			obj.value = data.value == 1 ? "成都" : "";
 		}
 
 		return obj;

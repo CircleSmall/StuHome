@@ -7,11 +7,20 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 
 	var FORM_DATA = {};
 	var FORM_IMG = {};
+	FORM_IMG.photo = []; //初始化图片数组
 
 	var onePicStr = $('.J_onePic').html();
 
+	checkForm(); //表单的验证
+
 	// 点击第一步的下一步
 	$('#J_first_next', J_first).click(function() {
+		//先校验input是否全部添加完成
+		var checkFormResult = checkAllInput();
+		if (checkFormResult !== "ok") {
+			alert(checkFormResult);
+			return;
+		}
 		FORM_DATA = {}; //清空表单数据
 		FORM_DATA = $.J_translateFormData($('form', J_first));
 		FORM_DATA.photo = FORM_IMG;
@@ -25,14 +34,14 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 		uploade.checkImg(form, function(data) {
 			var result = data;
 			if (result.check_result == "ok") {
-				FORM_IMG["img_url" + onePic.attr('data-id')] = result.img_path;
+				// FORM_IMG["img_url" + onePic.attr('data-id')] = result.img_path;
+				FORM_IMG.photo.push(result.img_path);
 				var imgUrl = server.baseUrl + result.img_path;
 				var str = '<img src="' + imgUrl + '" alt="">';
 				$('.showImg', onePic).html(str);
 			} else {
 				return;
 			}
-
 		})
 	});
 
@@ -58,7 +67,7 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 			templateData.push(uploade.mapResultData(obj));
 		};
 		J_third.children('.row').remove();
-		$.J_apply($('.J_template_third'),{
+		$.J_apply($('.J_template_third'), {
 			list: templateData
 		});
 
@@ -81,6 +90,114 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 	$('.form-return').click(function() {
 		history.go(-1);
 	});
+
+	//表单验证
+	function checkForm() {
+		//房源标题验证
+		$('.room-title', J_first).blur(function() {
+			var str = $(this).val();
+			var warnDOM = $('.J_add_title', J_first).find('.warn');
+			if (str.length > 20 || str.length <= 0) {
+				warnDOM.text("您输入的字符不符合格式");
+			} else {
+				warnDOM.text("");
+			}
+		});
+
+		//联系人验证
+		$('.contact-person', J_first).blur(function() {
+			var str = $(this).val();
+			var warnDOM = $('.J_add_ownername', J_first).find('.warn');
+			if (str.length > 6 || str.length <= 0) {
+				warnDOM.text("您输入的字符不符合格式");
+			} else {
+				warnDOM.text("");
+			}
+		});
+
+		//联系电话验证
+		$('.contact-phone', J_first).blur(function() {
+			var str = $(this).val();
+			var warnDOM = $('.J_add_phone', J_first).find('.warn');
+			if (str.length > 11 || str.length <= 0) {
+				warnDOM.text("您输入的字符不符合格式");
+			} else {
+				warnDOM.text("");
+			}
+		});
+
+		//详细地址验证
+		$('.J_address', J_first).blur(function() {
+			var str = $(this).val();
+			var warnDOM = $('.J_add_address', J_first).find('.warn');
+			if (str.length > 30 || str.length <= 0) {
+				warnDOM.text("您输入的字符不符合格式");
+			} else {
+				warnDOM.text("");
+			}
+		});
+
+		//房间介绍验证
+		$('.room-intro', J_first).blur(function() {
+			var str = $(this).val();
+			var warnDOM = $('.J_add_roomintro', J_first).find('.warn');
+			if (str.length > 140 || str.length <= 0) {
+				warnDOM.text("您输入的字符不符合格式");
+			} else {
+				warnDOM.text("");
+			}
+		});
+
+		//价格介绍验证
+		$('.price', J_first).blur(function() {
+			var str = $(this).val();
+			var warnDOM = $('.J_add_price', J_first).find('.warn');
+			if (str.length > 20 || str.length <= 0) {
+				warnDOM.text("您输入的字符不符合格式");
+			} else {
+				warnDOM.text("");
+			}
+		});
+
+		//平方大小验证
+		$('.J_area_size', J_first).blur(function() {
+			var str = $(this).val();
+			var warnDOM = $('.J_add_areasize', J_first).find('.warn');
+			var reg = /^[0-9]*[1-9][0-9]*$/gi;
+			if (str.length > 10 || str.length <= 0 || !reg.test(str)) {
+				warnDOM.text("请输入正确的数字");
+			} else {
+				warnDOM.text("");
+			}
+		});
+
+		//几室几厅验证
+		$('.J_area_num', J_first).blur(function() {
+			var str = $(this).val();
+			var warnDOM = $('.J_add_areanum', J_first).find('.warn');
+			if (str.length > 8 || str.length <= 0) {
+				warnDOM.text("您输入的字符不符合格式");
+			} else {
+				warnDOM.text("");
+			}
+		});
+	}
+
+	function checkAllInput() {
+		var str = "ok";
+		if ($('.warn', J_first).text().length > 0) {
+			str = "请填写正确再点击下一步"
+		} else if ($('.hot-water input:checked', J_first).length == 0) {
+			str = "请确定是否有热水";
+		} else if ($('.network input:checked', J_first).length == 0) {
+			str = "请确定是否有网络";
+		} else if ($('.ac input:checked', J_first).length == 0) {
+			str = "请确定是否有空调";
+		} else if ($('.wc input:checked', J_first).length == 0) {
+			str = "请确定是否有卫生间";
+		}
+		return str;
+	}
 
 	//hash监听
 	window.onhashchange = function() {

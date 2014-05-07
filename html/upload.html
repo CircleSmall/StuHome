@@ -52,62 +52,72 @@
 
             <div class="row">
               <label for="title" class="col label" id="">房源标题 : </label>
-              <input type="text" class="col" name="abstract_text">
-              <p class="add col"> <span class="xing">*</span> <span>标题限20字</span></p>
+              <input type="text" class="col room-title" name="abstract_text">
+              <p class="add col J_add_title"> 
+                <span class="xing">*</span> 
+                <span>标题限20字</span>
+                <span class="warn"></span>
+              </p>
             </div>
 
             <div class="row">
               <label for="" class="col label">联&nbsp;系&nbsp;人 : </label>
               <input type="text" class="col contact-person" name="owner_name">
-              <p class="add col"> <span class="xing">*</span> <span></span></p>
+              <p class="add col J_add_ownername"> <span class="xing">*</span> <span></span><span class="warn"></span></p>
             </div>
 
             <div class="row">
               <label for="" class="col label">联系电话 : </label>
               <input type="text" class="col contact-phone" name="owner_phone">
-              <p class="add col"> <span class="xing">*</span> <span></span></p>
+              <p class="add col J_add_phone"> <span class="xing">*</span> <span></span><span class="warn"></span></p>
             </div>
 
             <div class="line"></div>
 
             <div class="row">
               <label for="" class="col label">邻近学校 : </label>
+              <select id="" class="col city" name="city_id">
+                  <option value ="1">成都</option>
+              </select>
+              <p class="add col"> <span class="xing">*</span> <span></span><span class="warn"></span></p>
+            </div>
+            <div class="row">
+              <label for="" class="col label">邻近学校 : </label>
               <select id="" class="col school" name="school_id">
                   <option value ="1">四川大学</option>
                   <option value ="2">电子科技大学</option>
               </select>
-              <p class="add col"> <span class="xing">*</span> <span></span></p>
+              <p class="add col"> <span class="xing">*</span> <span></span><span class="warn"></span></p>
             </div>
 
             <div class="row">
               <label for="" class="col label">详细地址 : </label>
-              <input type="text" class="col" name="address">
-              <p class="add col"> <span class="xing">*</span> <span>地址限30字</span></p>
+              <input type="text" class="col J_address" name="address">
+              <p class="add col J_add_address"> <span class="xing">*</span> <span>地址限30字</span><span class="warn"></span></p>
             </div>
 
             <div class="row">
               <label for="" class="col label">房间介绍 : </label>
-              <textarea id="" class="col room-intro" name="other">
-              </textarea>
-              <p class="add col"> <span class="xing">*</span> <span>说明限140字</span></p>
+              <textarea id="" class="col room-intro" name="other"></textarea>
+              <p class="add col J_add_roomintro"> <span class="xing">*</span> <span>说明限140字</span><span class="warn"></span></p>
             </div>
 
             <div class="row">
               <label for="" class="col label">价&nbsp;&nbsp;&nbsp;&nbsp;格 : </label>
               <input type="text" class="col price" name="price">
-              <p class="add col"> <span class="xing">*</span> <span></span></p>
+              <p class="add col J_add_price"> <span class="xing">*</span> <span></span><span class="warn"></span></p>
             </div>
             
             <div class="row">
               <label for="" class="col label">平方大小 : </label>
-              <input type="text" class="col area" name="square">
-              <p class="add col"> <span class="xing">*</span> <span></span></p>
+              <input type="text" class="col area J_area_size" name="square">
+              <p class="add col J_add_areasize"> <span class="xing">*</span> <span></span><span class="warn"></span></p>
             </div>
 
             <div class="row">
               <label for="" class="col label">几室几厅 : </label>
-              <input type="text" class="col area" name="size_des">
-              <p class="add col"> <span class="xing">*</span> <span></span></p>
+              <input type="text" class="col area J_area_num" name="size_des">
+              <p class="add col J_add_areanum"> <span class="xing">*</span> <span></span><span class="warn"></span></p>
             </div>
             
             <div class="row">
@@ -116,6 +126,9 @@
                 <label class="col"><input type="radio" name="owner_type_id" value="1" >个人租赁</label>
                 <label class="col"><input type="radio" name="owner_type_id" value="2" >经纪人租赁</label>
               </div>
+              <p class="add col"> 
+                <span class="xing">*</span><span class="warn"></span>
+              </p>
             </div>
 
             <div class="row">
@@ -124,6 +137,9 @@
                 <label class="col"><input type="radio" name="hot_water_id" value="1" >有</label>
                 <label class="col"><input type="radio" name="hot_water_id" value="0" >无</label>
               </div>
+              <p class="add col"> 
+                <span class="xing">*</span><span class="warn"></span>
+              </p>
             </div>
 
             <div class="row">
@@ -132,6 +148,9 @@
                 <label class="col"><input type="radio" name="network_condition_id" value="1" >有</label>
                 <label class="col"><input type="radio" name="network_condition_id" value="0">无</label>
               </div>
+              <p class="add col"> 
+                <span class="xing">*</span><span class="warn"></span>
+              </p>
             </div>
 
             <div class="row">
@@ -140,6 +159,20 @@
                 <label class="col"><input type="radio" name="ac_id" value="1" >有</label>
                 <label class="col"><input type="radio" name="ac_id" value="0">无</label>
               </div>
+              <p class="add col"> 
+                <span class="xing">*</span><span class="warn"></span>
+              </p>
+            </div>
+
+            <div class="row">
+              <div for="inputEmail3" class="col label">卫&nbsp;生&nbsp;间 : </div>
+              <div class="wc col">
+                <label class="col"><input type="radio" name="wc_condition_id" value="1" >有</label>
+                <label class="col"><input type="radio" name="wc_condition_id" value="0">无</label>
+              </div>
+              <p class="add col"> 
+                <span class="xing">*</span><span class="warn"></span>
+              </p>
             </div>
 
             <a class="form-btn" id="J_first_next">保存,下一步</a>

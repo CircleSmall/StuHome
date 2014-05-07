@@ -43,6 +43,7 @@ define('server/server', function() {
 				owner_phone: "?",
 				owner_type_id: "?",
 				school_id: "?",
+				city_id: "?",
 				address: "?",
 				other: "?",
 				price: "?",
@@ -51,6 +52,7 @@ define('server/server', function() {
 				hot_water_id: "?",
 				network_condition_id: "?",
 				ac_id:"?",
+				wc_condition_id: "?",
 				photo: "?"//图片url
 			},
 			type: "upload"
