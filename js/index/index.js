@@ -52,12 +52,12 @@ define('index/index', ['common/common', 'server/server'], function($, baseServer
 	}
 
 	function mapSearchResult(data) {
-		data.baseUrl = baseServer.baseUrl.substr(0,baseServer.baseUrl.length-1);
 		for (var i in data) {
 			var d = data[i];
 			d.wc = d.wc_condition_id == 1 ? "有" : "无";
 			d.ac = d.ac_id == 1 ? "有" : "无";
 			d.hot_water = d.hot_water_id == 1 ? "有" : "无";
+			d.baseUrl = baseServer.baseUrl.substr(0,baseServer.baseUrl.length-1);
 		}
 		return data;
 	}
