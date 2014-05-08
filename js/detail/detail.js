@@ -41,7 +41,7 @@ define('detail/detail', ['common/common', 'server/server'], function($, baseServ
 				result["img_path"] = [];
 				for (var j in data[i]) {
 					result["img_path"].push({
-						url: data[i][j]
+						url: result.baseUrl + data[i][j]
 					});
 				}
 				bizObj.img_path = result["img_path"];
