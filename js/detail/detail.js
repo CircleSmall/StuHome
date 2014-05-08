@@ -25,6 +25,7 @@ define('detail/detail', ['common/common', 'server/server'], function($, server) 
 
 	function mapData(data) {
 		var result = {};
+		result.baseUrl = "Stuhome";
 		for (var i in data) {
 			if (i == "wc_condition_id" || i == "ac_id" || i == "hot_water_id") {
 				result[i] = data[i] == 1 ? "有" : "无";

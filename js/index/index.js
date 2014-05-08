@@ -1,7 +1,7 @@
-define('index/index', ['common/common', 'server/server'], function($, server) {
+define('index/index', ['common/common', 'server/server'], function($, baseServer) {
 
 	/*服务器端口*/
-	var server = server.index;
+	var server = baseServer.index;
 
 	/*领域对象*/
 	var bizObj = {
@@ -57,6 +57,7 @@ define('index/index', ['common/common', 'server/server'], function($, server) {
 			d.wc = d.wc_condition_id == 1 ? "有" : "无";
 			d.ac = d.ac_id == 1 ? "有" : "无";
 			d.hot_water = d.hot_water_id == 1 ? "有" : "无";
+			d.baseUrl = "Stuhome";
 		}
 		return data;
 	}

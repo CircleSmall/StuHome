@@ -1,15 +1,12 @@
 require(['common/common', 'detail/detail'], function($, detail) {
 
 	var bizObj = detail.getBizObj;
-	bizObj.room_id = preLoadData.room_id;
+	bizObj.room_id = $.J_url.getPara("roomId");
 
 	//拿到初始化数据并渲染
 	detail.getDetailData(bizObj.room_id, function(data) {
 		var imgLength = data.img_path.length;
 		$.J_apply($('.J_template_detail'), data, function() {
-
-
-
 			var imgShow = $('.imgShow');
 			var divAbsolute = $('.sliderAbsolute', imgShow);
 			var imgW = 88;
@@ -59,7 +56,4 @@ require(['common/common', 'detail/detail'], function($, detail) {
 		});
 
 	});
-
-
-
 })

@@ -2,7 +2,7 @@
 define('server/server', function() {
 
 	var baseUrl = "http://localhost:8080/Stuhome/";
-	// var baseUrl = "http://127.0.0.1/Stuhome/js/test/";
+	// var baseUrl = "http://localhost/Stuhome/js/test/";
 
 	var index = {
 		//搜索条件

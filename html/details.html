@@ -56,7 +56,7 @@
                 <div class="sliderRelative col">
                   <div class="sliderAbsolute" style="left:0px;">
                     {{#img_path}}
-                    <div class=" col item"><img src="{{url}}" alt=""></div>
+                    <div class=" col item"><img src="{{baseUrl}}{{url}}" alt=""></div>
                     {{/img_path}}
                   </div>
                   
@@ -118,12 +118,6 @@
   <!-- main end -->
 
   <!-- 脚本 -->
-  <script type="text/javascript">
-  //页面初始化数据
-  var preLoadData = {
-    room_id: 14
-  }
-  </script>
   <script data-main="../js/config" src="../js/require.js"></script>
   <script type="text/javascript">require(['detail/main']);</script>
 </body>
