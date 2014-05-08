@@ -18,12 +18,10 @@ define('common/common', function(require) {
 		var para = obj.get || obj.post;
 		var paraObj = $.J_url.urlMerge(para, data);
 		var sendStr = JSON.stringify(paraObj);
-		
 		//传送的字符串
 		if (obj.type) {
 			sendStr = obj.type + "=" + sendStr;
 		}
-
 		if (obj.get) {
 			$.get(url, sendStr, function(returnData) {
 				callback && callback(returnData);

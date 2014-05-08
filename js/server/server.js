@@ -69,7 +69,8 @@ define('server/server', function() {
 			url: baseUrl + 'RoomDetailServlet',
 			post: {
 				room_id: "?"
-			}
+			},
+			type: "detail"
 		}
 	}
 
