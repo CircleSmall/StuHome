@@ -1,6 +1,6 @@
-define('detail/detail', ['common/common', 'server/server'], function($, server) {
+define('detail/detail', ['common/common', 'server/server'], function($, baseServer) {
 	/*服务器端口*/
-	var server = server.detail;
+	var server = baseServer.detail;
 
 	/*领域对象*/
 	var bizObj = {
@@ -25,7 +25,7 @@ define('detail/detail', ['common/common', 'server/server'], function($, server) 
 
 	function mapData(data) {
 		var result = {};
-		result.baseUrl = "Stuhome";
+		result.baseUrl = baseServer.baseUrl.substr(0,baseServer.baseUrl.length-1);
 		for (var i in data) {
 			if (i == "wc_condition_id" || i == "ac_id" || i == "hot_water_id") {
 				result[i] = data[i] == 1 ? "有" : "无";
