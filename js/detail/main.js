@@ -1,7 +1,7 @@
 require(['common/common', 'detail/detail'], function($, detail) {
 
 	var bizObj = detail.getBizObj;
-	bizObj.room_id = $.J_url.getPara("roomId");
+	bizObj.room_id = parseInt($.J_url.getPara("roomId"));
 
 	//拿到初始化数据并渲染
 	detail.getDetailData(bizObj.room_id, function(data) {
