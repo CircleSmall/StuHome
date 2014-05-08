@@ -6,8 +6,7 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 	var J_done = $('#J_done');
 
 	var FORM_DATA = {};
-	var FORM_IMG = {};
-	FORM_IMG.photo = []; //初始化图片数组
+	FORM_DATA.photo = []; //初始化图片数组
 
 	var onePicStr = $('.J_onePic').html();
 
@@ -23,7 +22,7 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 		}
 		FORM_DATA = {}; //清空表单数据
 		FORM_DATA = $.J_translateFormData($('form', J_first));
-		FORM_DATA.photo = FORM_IMG;
+		FORM_DATA.photo = [];
 		$.J_url.setHash('second');
 	});
 
@@ -34,8 +33,7 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 		uploade.checkImg(form, function(data) {
 			var result = data;
 			if (result.check_result == "ok") {
-				// FORM_IMG["img_url" + onePic.attr('data-id')] = result.img_path;
-				FORM_IMG.photo.push(result.img_path);
+				FORM_DATA.photo.push(result.img_path);
 				var imgUrl = server.baseUrl + result.img_path;
 				var str = '<img src="' + imgUrl + '" alt="">';
 				$('.showImg', onePic).html(str);
