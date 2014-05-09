@@ -57,6 +57,7 @@ define('index/index', ['common/common', 'server/server'], function($, baseServer
 			d.wc = d.wc_condition_id == 1 ? "有" : "无";
 			d.ac = d.ac_id == 1 ? "有" : "无";
 			d.hot_water = d.hot_water_id == 1 ? "有" : "无";
+			d.school = d.school_id == 1? "四川大学" : "电子科技大学";
 			d.baseUrl = baseServer.baseUrl.substr(0,baseServer.baseUrl.length-1);
 		}
 		return data;
