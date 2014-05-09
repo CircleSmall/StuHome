@@ -58,6 +58,22 @@ define('index/index', ['common/common', 'server/server'], function($, baseServer
 			d.ac = d.ac_id == 1 ? "有" : "无";
 			d.hot_water = d.hot_water_id == 1 ? "有" : "无";
 			d.school = d.school_id == 1? "四川大学" : "电子科技大学";
+			
+			if (d.network_condition_id && d.network_condition_id == 1) {
+				d.network = "有线";
+			} else if (d.network_condition_id == 2) {
+				d.network = "无线";
+			} else if (d.network_condition_id == 3) {
+				d.network = "有线及无线"
+			} else {
+				d.network = "无网";
+			}
+
+			if (d.owner_type_id == 1) {
+				d.room_type = "个人租赁";
+			} else if (d.owner_type_id == 2) {
+				d.room_type = "房源租赁";
+			}
 			d.baseUrl = baseServer.baseUrl.substr(0,baseServer.baseUrl.length-1);
 		}
 		return data;
