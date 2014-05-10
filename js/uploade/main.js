@@ -33,7 +33,6 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 		uploade.checkImg(form, function(data) {
 			var result = data;
 			if (result.check_result == "ok") {
-				FORM_DATA.photo.push(result.img_path);
 				var imgUrl = server.baseUrl + result.img_path;
 				var str = '<img src="' + imgUrl + '" alt="">';
 				$('.showImg', onePic).html(str);
@@ -52,6 +51,12 @@ require(['common/common', 'uploade/uploade', 'server/server'], function($, uploa
 
 	//点击第二步的下一步
 	$('#J_second_next', J_second).click(function() {
+		//给图片数组赋值
+		FORM_DATA.photo = [];
+		$('.showImg img').each(function() {
+			FORM_DATA.photo.push($(this).attr("src"));
+		});
+		console.log(FORM_DATA.photo)
 		//序列化得到的表单元素
 		var templateData = [];
 		for (var i in FORM_DATA) {
